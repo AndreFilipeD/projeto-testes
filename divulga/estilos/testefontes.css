@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Neucha&display=swap');
+/*font-family: 'Amatic SC', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Poiret+One&display=swap');
+/*font-family: 'Nanum Pen Script', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+/*font-family: 'Short Stack', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Notable&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+
+#font1{
+    font-family: 'Amatic SC', sans-serif;
+    font-size: 4em;
+}
+
+#font2{
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 4em;
+}
+
+#font3{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 4em;
+}
+
+#font4{
+    font-family: 'Poiret One', sans-serif;
+    font-size: 4em;
+}
+
+#font5{
+    font-family: 'Short Stack', cursive;
+    font-size: 4em;
+}
+
+#font6{
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 4em;
+}
+
+#font7{
+    font-family: 'Annie Use Your Telescope', cursive;
+    font-size: 4em;
+}
+
+#font8{
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 4em;
+}
+
+#font9{
+    font-family: 'Notable', sans-serif;
+    font-size: 4em;
+}
+
+#font10{
+    font-family: 'Italiana', sans-serif;
+    font-size: 4em;
+}
+
+#font11{
+    font-family: 'Gugi', sans-serif;
+    font-size: 4em;
+}
+
+#font12{
+    font-family: 'Caesar Dressing', sans-serif;
+    font-size: 4em;
+}

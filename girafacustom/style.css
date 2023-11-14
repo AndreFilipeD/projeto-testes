@@ -1,0 +1,115 @@
+@charset "UTF-8";
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Arnitta';
+    src: url('fontes/Arnitta\ Callina.otf')
+    format('opentype');
+}
+@font-face {
+    font-family: 'Cherly';
+    src: url('fontes/Cherly.otf')
+    format('opentype');
+}
+html{
+    background-color: black;
+}
+#pagetitle{
+    font-family: 'Cherly', sans-serif;
+    font-weight: 100;
+    border-bottom: 2px solid black;
+}
+header{
+    background-color: rgb(184, 184, 184);
+    display: flex;
+    flex-direction: row;
+}
+.cole{
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid black;
+}
+.line{
+    display: flex;
+    flex-direction: row;
+}
+#imagea{
+    width: 100px;
+    margin-left: 192px;
+}
+#imageb{
+    width: 100px;
+    margin-left: 73px;
+}
+#imagec{
+    width: 100px;
+    margin-left: 192px;
+}
+.maintitle{
+    font-family: 'Cherly', sans-serif;
+    font-weight: 100;
+}
+.sectitle{
+    font-family: 'Arnitta', sans-serif;
+    font-weight: 100;
+    color: #FFCAB8;
+}
+.titlea{ /*LOGO PRINCIPAL CIRCULO*/
+    margin-top: -300px;
+    margin-left: 65px;
+    font-size: 10em;
+}
+.titleb{ /*SEGUNDO TITULO CIRCULO*/
+    margin-top: -120px;
+    margin-left: 160px;
+    font-size: 5em;
+}
+.titlec{ /*LOGO PRINCIPAL VERTICAL*/
+    margin-top: -270px;
+    margin-left: 50px;
+    font-size: 7.5em;
+}
+.titled{ /*SEGUNDO TITULO VERTICAL*/
+    margin-top: -80px;
+    margin-left: 120px;
+    font-size: 4em;
+}
+.titlee{ /*LOGO PRINCIPAL HORIZONTAL*/
+    margin-top: -300px;
+    margin-left: 33px;
+    font-size: 11.5em;
+}
+.titlef{ /*SEGUNDO TITULO HORIZONTAL*/
+    margin-top: -140px;
+    margin-left: 160px;
+    font-size: 5.5em;
+}
+.bordaa{
+    margin-left: 50px;
+    margin-top: 50px;
+    border: 5px dotted black;
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+}
+.bordab{
+    margin-left: 100px;
+    margin-top: 50px;
+    border-top: 7px dotted rgb(0, 0, 0);
+    border-bottom: 7px dotted rgb(0, 0, 0);
+    width: 250px;
+    height: 500px;
+    border-radius: 100px;
+}
+.bordac{
+    margin-left: 50px;
+    margin-top: 50px;
+    border-top: 6px dotted rgb(0, 0, 0);
+    border-bottom: 6px dotted rgb(0, 0, 0);
+    width: 500px;
+    height: 500px;
+    border-radius: 100px;
+}

@@ -1,0 +1,107 @@
+@charset "UTF-8";
+/*
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Poiret+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Slackey&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+*/
+
+@font-face {
+    font-family: 'Mowgli';
+    src: url('../fontes/MowgliScript.otf')
+    format('opentype');
+}
+@font-face {
+    font-family: 'Theobald';
+    src: url('../fontes/Theobald.otf')
+    format('opentype');
+}
+@font-face {
+    font-family: 'MiniGarden';
+    src: url('../fontes/Mini\ Garden.otf')
+    format('opentype');
+}
+@font-face {
+    font-family: 'Exquite';
+    src: url('../fontedois/Exquite.otf')
+    format('opentype');
+}
+@font-face {
+    font-family: 'Arnitta';
+    src: url('../fontedois/Arnitta\ Callina.otf')
+    format('opentype');
+}
+@font-face {
+    font-family: 'Cherly';
+    src: url('../fontedois/Cherly.otf')
+    format('opentype');
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#logo{
+height: fit-content;
+}
+header{
+    padding: 20px;
+    height: 500px;
+    border: 2px solid #000000;
+    /*background-color: #947335;*/
+    background-color: #883636;
+    /*background-color: #612727;*/
+    /*color: #f4a000;*/
+}
+img{
+    margin-top: -10px;
+    margin-left: 53px;
+    padding-top: 6px;
+    /*filter: invert();*/
+}
+#titleone{
+    position: relative;
+    font-family: 'Cherly', sans-serif;
+    /*font-family: 'MiniGarden', sans-serif;*/
+    /*font-family: 'Theobald', sans-serif;*/
+    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+    font-size: 2.4em;/*3.3*/
+    font-weight: 100;
+    /*color: rgb(0, 0, 0);*/
+    color: rgb(0, 0, 0);
+    margin-top: -70px;
+    margin-left: 20px;
+}
+#titletwo{
+    position: relative;
+    font-family: 'Arnitta', sans-serif;
+    /*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+    /*font-family: 'Mowgli', sans-serif;*/
+    /*
+    font-family: 'Theobald', sans-serif;
+    */
+    font-size: 1.2em;/*2.2*/
+    font-weight: 100;
+    margin-left: 40px;
+    margin-top: -30px;
+    color: #FFCAB8;
+    /*color: #f4a000;*/
+    /*transform: rotate(-5deg);*/
+}
+#borda{
+    margin-left: 0px;
+    margin-top: 0px;
+    /*border-top: 1.5px dotted rgb(0, 0, 0);
+    border-bottom: 1.5px dotted rgb(0, 0, 0);*/
+    border: 2px dotted black;
+    width: 150px;
+    height: 150px;
+    border-radius: 200px;
+    /*background-color: #947335;*/
+}
+
+

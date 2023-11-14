@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" id="bag">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GirafaCustom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imperiologo.svg" type="image/x-icon">
+</head>
+<body onload="reset()">
+    <header>
+        <div class="cole">
+            <h1 id="pagetitle">IMPÉRIO custom</h1>
+            <div class="line">
+                <label for="ichange">Mudar cor de fundo</label>
+                <input type="color" id="ichange" value="#883636">
+            </div>
+            <input type="button" value="aplicar cor" onclick="aplicor()">
+            <input type="button" value="resetar" onclick="reset()">
+        </div>
+        <div class="cole">
+            <input type="button" value="Circulo" onclick="displate(1)">
+            <input type="button" value="Vertical" onclick="displate(2)">
+            <input type="button" value="Horizontal" onclick="displate(3)">
+        </div>
+        <div class="cole">
+            <label for="igiracolor">cor da girafa</label>
+            <input type="range" id="igiracolor" min="0" max="360" value="0" onmouseup="aplicor()">
+            <label for="igirasat">saturação da girafa</label>
+            <input type="range" id="igirasat" min="0" max="200" value="100" onmouseup="aplicor()">
+            <label for="igirabri">brilho da girafa</label>
+            <input type="range" id="igirabri" min="0" max="200" value="100" onmouseup="aplicor()">
+        </div>
+        <div class="cole">
+            <label for="bordaset">grossura borda</label>
+            <input type="range" id="bordaset" min="0" max="10" value="6" onmouseup="aplicor()">
+        </div>
+    </header>
+    <main>
+        <div id="circle">
+            <div class="bordaa"><img id="imagea" src="imperiologo.svg" alt="giraffe"></div>
+            <h1 class="maintitle titlea">IMPÉRIO</h1>
+            <h1 class="sectitle titleb">Francisca</h1>
+        </div>
+        <div id="vertic">
+            <div class="bordab"><img id="imageb" src="imperiologo.svg"alt="giraffe"></div>
+            <h1 class="maintitle titlec">IMPÉRIO</h1>
+            <h1 class="sectitle titled">Francisca</h1>
+        </div>
+        <div id="horiz">
+            <div class="bordac"><img id="imagec" src="imperiologo.svg" alt="giraffe"></div>
+            <h1 class="maintitle titlee">IMPÉRIO</h1>
+            <h1 class="sectitle titlef">Francisca</h1>
+        </div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>

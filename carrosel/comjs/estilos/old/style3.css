@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@font-face {/* - FONTE CHERLY - */
+	font-family: 'Cherly';
+	src: url('../fontes/Cherly.otf')
+	format('opentype');}
+@font-face {/* - FONTE ARNITTA - */
+    font-family: 'Arnitta';
+    src: url('../fontes/Arnitta\ Callina.otf')
+    format('opentype');}
+
+:root{/* - VARIAVEIS - */
+   --mainbackcolor:#883636;
+	--secbackcolor:#FFCAB8;
+	--titlefont:'Cherly', sans-serif;
+	--sectitlefont:'Arnitta', sans-serif;}
+*{/* - START - */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;}
+
+body{
+   min-height: 100vh;
+   display: flex;
+}
+
+header{
+	display: flex;
+	justify-content: center;
+   	min-height: 90px;
+   	background-color: var(--mainbackcolor);
+   	height: 20px;
+   	width: 100%;
+	border-bottom: 4px dotted black;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.397);
+}
+#logo{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--mainbackcolor);
+	height: fit-content;
+	width: 200px;
+	border-radius: 20px;
+	margin: 5px;
+	border-bottom: 4px dotted black;
+	border-right: 4px dotted black;
+	border-left: 4px dotted black;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.397);
+}
+#logoImage{
+width: 100px;
+height: 100px;
+}
+#mainTitle{
+	font-family: var(--titlefont);
+	font-size: 3.5em;
+	font-weight: 100;
+	margin-top: -20px;
+	margin-left: 6px;
+}
+#secTitle{
+	font-family: var(--sectitlefont);
+	font-size: 1.8em;
+	font-weight: 100;
+	margin-top: -43px;
+	margin-left: 0px;
+	color: var(--secbackcolor);
+	*/color: var(--mainbackcolor);/*
+}
+main{
+   flex: 1;
+}
+/*
+
+font-family: 'Cherly', sans-serif;
+font-family: 'Arnitta', sans-serif;*/

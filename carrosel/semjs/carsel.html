@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrosel</title>
+    <style>
+        @keyframes caranim{
+            0%{left: -60px;}
+            25%{left: -468px;}
+            50%{left: -877px;}
+            75%{left: -1286px;}
+            0%{left: -60px;}
+        }
+        #carropic{
+            position: absolute;
+            width: 424%;
+            top: -304px;
+            left: -60px;
+            animation-name: caranim;
+            animation-delay: 2s;
+            animation-duration: 32s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: ease;
+        }
+    </style>
+</head>
+<body>
+    <img id='carropic' src="4669814.jpg" alt="cars">
+</body>
+</html>

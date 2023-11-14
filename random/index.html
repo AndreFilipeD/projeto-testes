@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random number tests</title>
+    <style>
+        #btn{
+            border: 1px solid black;
+            width: 100px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color: gray;
+            color: white;
+        }
+        img{
+            width: 400px;
+            height: 400px;
+            filter: invert();
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="txt">0</h1>
+    <input id='btn' type="button" onclick="gerar()" value="Atualizar">
+    <img src="angry.jpg" alt="teste">
+    <script>
+        var valor
+        function gerar(){
+            valor = Math.floor(Math.random() * 3)+1
+            window.document.querySelector('#txt').innerHTML=valor
+        }
+    </script>
+</body>
+</html>
