@@ -95,7 +95,7 @@ header{
 	font-family: var(--titlefont);
 	font-size: 3em;
 	font-weight: 100;
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-bottom: 50px;
 	margin-left: -20px;
 }
@@ -113,7 +113,9 @@ main{
 	width: 100vw;
 	background-color: rgb(255, 255, 255);
  }
- iframe{
-	width: 100%;
-	overflow-y: hidden;
+#mainSlider{
+	width: 100vw;
+	height: 59vw;
+	overflow-y: none;
+	overflow-x: none;
  }
