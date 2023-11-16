@@ -16,20 +16,10 @@ function clickthrow(){
 }
 
 function widthResizer(){
-    widthis = window.innerWidth
     
-    if(widthis>700){
-        mslider.src='../slides/slidedes.html'
-        window.alert('deskver')
-    }else{
-        mslider.src='../slides/slidemob.html'
-        window.alert('mobver')
-    }
-
 }
   // Coleta width da tela ao carregar
   widthResizer()
   
   // Coleta o width da tela ao ser redimensionada
-  setInterval(function(){widthResizer()},1000)
-  //window.addEventListener('resize', widthResizer)
+window.addEventListener('resize', widthResizer)

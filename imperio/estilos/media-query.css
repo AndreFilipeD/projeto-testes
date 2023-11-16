@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 768px) and (max-width: 992px){
+    
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    /*HERE*/
+    #mainSlider{
+        width: 100vw;
+        height: 40vw;
+        overflow-y: none;
+        overflow-x: none;
+     }
+}
+
+@media screen and (min-width: 1200px){
+    
+}
