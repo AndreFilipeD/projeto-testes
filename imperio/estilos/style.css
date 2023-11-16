@@ -17,11 +17,17 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;}
-
+html{
+	overflow-x: hidden;
+}
 body{
-   min-height: 100vh;
+   /*min-height: 100vh;*/
+   height: 1200px;
    display: flex;
    flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   
 }
 
 header{
@@ -29,7 +35,7 @@ header{
 	justify-content: center;
    	height: 90px;
    	background-color: var(--mainbackcolor);
-   	width: 100%;
+   	width: 100vw;
 }
 #rightHeader{
 	width: 100%;
@@ -118,4 +124,25 @@ main{
 	height: 59vw;
 	overflow-y: none;
 	overflow-x: none;
+}
+#shopContainer{
+	/*background-color: rgb(201, 185, 175);*/
+}
+.shopItens{
+	/*background-color: rgb(205, 228, 236);*/
+	margin: 0 auto 0 auto;
+	max-width: 600px;
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.shopProduct{
+	margin-top: 6vw;
+	margin-right: 3vw;
+	margin-left: 3vw;
+	width: 180px;
+	height: 250px;
+	border: 1px solid rgb(207, 207, 207);
 }

@@ -12,8 +12,22 @@
         overflow-y: none;
         overflow-x: none;
      }
+    .shopItens{
+        max-width: 1200px;
+    }
+    #shopContainer{
+        margin-top: -5vw;
+    }
 }
 
 @media screen and (min-width: 1200px){
-    
+    body{
+        min-height: 100px;
+    }
+    .shopItens{
+        max-width: 1200px;
+    }
+    #shopContainer{
+        margin-top: -30vw;
+    }
 }
