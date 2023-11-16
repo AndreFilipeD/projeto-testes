@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Império Francisca</title>
 	<link rel="shortcut icon" href="images/lb.svg" type="image/x-icon">
 	<link rel="stylesheet" href="estilos/style.css">
+
 </head>
 <body>
+
 	<header>
 		<div id="leftHeader">
-			<img src="images/icons/menu.png" alt="Heart Plus">
+			<img src="images/icons/menu.png" alt="Heart Plus" onclick="clickthrow()">
 		</div>
 		<div id="logo">
 			<img id="logoImage" src="images/imperiologo.svg" alt="logoimperio">
@@ -23,12 +26,15 @@
 		</div>
 	</header>
 	<main>
-		<iframe id="mainSlider" src="slide.html" frameborder="0"></iframe>
+		<iframe id="mainSlider" name="mslide" src="slides/slide.html" frameborder="0"></iframe>
+		<a id="lka" href="slides/slidedes.html" target="mslide">desktop</a>
+		<a id="lkb" href="slides/slidemob.html" target="mslide">mobile</a>
 	</main>
 	<footer>
 
 	</footer>
 	<script src="script/script.js">
 	</script>
+
 </body>
 </html>
