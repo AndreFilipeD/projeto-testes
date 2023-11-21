@@ -149,7 +149,7 @@ main{
 	cursor: pointer;
 	transition: .5s;}
 .manual-btn:not(:last-child){margin-right: 4vw;}
-.manual-btn:hover{background-color: white;}
+.manual-btn:hover{background-color:/* white;*/#883636;}
 #sliderbtn1:checked ~ .first{margin-left: 0;}
 #sliderbtn2:checked ~ .first{margin-left: -25%;}
 #sliderbtn3:checked ~ .first{margin-left: -50%;}
@@ -170,7 +170,7 @@ main{
 .navigation-auto div:not(:last-child){
 	margin-right: 4vw;
 }
-#sliderbtn1:checked ~ .navigation-auto .auto-btn1{background-color: white;}
-#sliderbtn2:checked ~ .navigation-auto .auto-btn2{background-color: white;}
-#sliderbtn3:checked ~ .navigation-auto .auto-btn3{background-color: white;}
-#sliderbtn4:checked ~ .navigation-auto .auto-btn4{background-color: white;}
+#sliderbtn1:checked ~ .navigation-auto .auto-btn1{background-color:/* white;*/#883636;}
+#sliderbtn2:checked ~ .navigation-auto .auto-btn2{background-color:/* white;*/#883636;}
+#sliderbtn3:checked ~ .navigation-auto .auto-btn3{background-color:/* white;*/#883636;}
+#sliderbtn4:checked ~ .navigation-auto .auto-btn4{background-color:/* white;*/#883636;}
