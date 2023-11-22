@@ -224,7 +224,6 @@ main{
 	padding-bottom: 5px;
 }
 footer{
-	
     display: flex;
     flex-direction: row-reverse;
 	justify-content: left;
@@ -237,6 +236,17 @@ footer{
 	height: 400px;
 	width: 100%;
 	background-color: #883636;
+}
+#creditsFooter{
+	padding: 5px;
+	text-align: center;
+	font-size: .75em;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFCAB8;
+}
+#creditsFooter > h3 > a{
+	text-decoration: none;
+	color: #883636;
 }
 .footerblock{
 	margin-right: 6vw;
@@ -294,6 +304,7 @@ footer{
 }
 /* ------------ LEFT MENU ------------ */
 .left_menuBar{
+	font-family: var(--maintext);
 	position: absolute;
 	margin-left: 0px;
 	top: 0%;
@@ -371,6 +382,7 @@ footer{
 }
 /* ------------ CART MENU ------------ */
 .right_cartShop{
+	font-family: var(--maintext);
 	display: none;
 	position: absolute;
 	margin-left: 0px;
@@ -419,3 +431,42 @@ footer{
 	transition: .4s;
 }
 /* ------------ CENTER HEART PLUS ------------ */
+.center_connectPlus{
+	display: none;
+	padding: 20px;
+	border-radius: 20px;
+	font-family: var(--maintext);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -175px;
+	margin-top: -175px;
+	width: 350px;
+	height: 350px;
+	background-color: white;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.250);
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+#centerHeart{
+	display: flex;
+	flex-direction: row;
+}
+#centerHeart > h1{width: 80%;}
+#centerHeart > span{
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	transition: 1s;
+	border-radius: 20px;}
+#centerHeart > span:hover{
+	background-color: #77c9c9;
+	filter: invert();
+	transition: .4s;}
+#centerHeart > span > img{padding: 15px 5px;}
+.center_connectPlus > p{
+	text-align: center;
+	margin: 100px auto 0px auto;
+	width: 250px;
+	height: 50px;
+}

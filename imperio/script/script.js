@@ -25,6 +25,8 @@ function clickthrow(valbutton){
       window.document.querySelector(".left_menuBar").style="animation-name: menuClose;"
     }else if(sideMenu===2){
       window.document.querySelector(".right_cartShop").style="animation-name: cartClose;"
+    }else if(sideMenu===3){
+      window.document.querySelector(".center_connectPlus").style="display: none;"
     }
     sideMenu = 0
   }else{
@@ -39,6 +41,11 @@ function clickthrow(valbutton){
       window.document.getElementById("htmlSet").style.overflowY = "hidden";
       window.document.querySelector(".shadowBox").style="display: block;"
       window.document.querySelector(".right_cartShop").style="display: block;animation-name: cartOpen;"
+    }else if(valbutton===3){
+      sideMenu = 3
+      window.document.getElementById("htmlSet").style.overflowY = "hidden";
+      window.document.querySelector(".shadowBox").style="display: block;"
+      window.document.querySelector(".center_connectPlus").style="display: block;"
     }
   }
 }
