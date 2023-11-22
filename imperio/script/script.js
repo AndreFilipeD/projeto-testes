@@ -2,6 +2,7 @@ let slide = 1;
 var widthis;
 var mslider = window.document.getElementById("mainSlider");
 window.document.getElementById("sliderbtn1").checked = true;
+var sideMenu = 0;
 
 var sliderloop = setInterval(function(){nextImage()}, 6000)// Atualização automatica do Slider.
 
@@ -20,15 +21,26 @@ function clickthrow(valbutton){
   if(valbutton===0){
     window.document.getElementById("htmlSet").style.overflowY = "scroll";
     window.document.querySelector(".shadowBox").style="display: none;"
-    window.document.querySelector(".left_menuBar").style="animation-name: menuClose;"
-    /*"display: none;"*/
-  }else if(valbutton===1){
-    window.document.getElementById("htmlSet").style.overflowY = "hidden";
-    window.document.querySelector(".shadowBox").style="display: absolute;"
-    window.document.querySelector(".left_menuBar").style="animation-name: menuOpen;"/*"display: absolute;margin-left: 100px;"*/
+    if(sideMenu===1){
+      window.document.querySelector(".left_menuBar").style="animation-name: menuClose;"
+    }else if(sideMenu===2){
+      window.document.querySelector(".right_cartShop").style="animation-name: cartClose;"
+    }
+    sideMenu = 0
+  }else{
+    window.scrollTo(0,0)//x,y
+    if(valbutton===1){
+      sideMenu = 1
+      window.document.getElementById("htmlSet").style.overflowY = "hidden";
+      window.document.querySelector(".shadowBox").style="display: block;"
+      window.document.querySelector(".left_menuBar").style="animation-name: menuOpen;"
+    }else if(valbutton===2){
+      sideMenu = 2
+      window.document.getElementById("htmlSet").style.overflowY = "hidden";
+      window.document.querySelector(".shadowBox").style="display: block;"
+      window.document.querySelector(".right_cartShop").style="display: block;animation-name: cartOpen;"
+    }
   }
-    /*window.document.getElementById("mainSlider").src='slides/slidemob.html'
-    document.getElementById('elementID').click();*/
 }
 
 function widthResizer(){
