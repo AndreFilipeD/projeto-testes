@@ -103,8 +103,8 @@ header{
 	height: 80px;
 	margin-left: -70px;
 	margin-top: -5px;
-	transition: 1s;
 	border-radius: 50px;
+	transition: 1s;
 }
 #mainTitle{
 	font-family: var(--titlefont);
@@ -113,16 +113,19 @@ header{
 	margin-top: 48px;
 	margin-bottom: 50px;
 	margin-left: -20px;
-	background-color: #FFCAB8;
+	
+	/* Tipos de LOGO TESTAR */
 	/*border: 1.5px dotted black;*/
 	/*border: 3px double black;*/
 	/*border: 4px double #883636;*/
-	border: 8px double #883636;
 	/*border: 2px dotted black;*/
 	/*border: 2px dotted #883636;*/
 	/*border: 2px dotted #883636;*/
 	/*border: 4px outset #883636;*/
+	border: 8px double #883636;
 	border-radius: 0px 30px 0px 30px;
+
+	background-color: #FFCAB8;
 	color: #883636;
 
 	padding-left: 5px;
@@ -136,14 +139,10 @@ header{
 	font-weight: 500;
 	margin-top: 45px;
 	margin-left: -125px;
-
 	text-shadow: 0px 1px 1px #883636;
-	/*color: var(--secbackcolor);*/
 }
 main{
 	flex: 1;
-	/*height: 100vh;*/
-	/*height: 1000px;*/
 	width: 100%;
 	background-color: rgb(255, 255, 255);
  }
