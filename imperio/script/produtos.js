@@ -4,14 +4,38 @@ var produtosLoja = [
     alt:'Camiseta',
     nome:'Blusa de exemplo',
     valorAntigo:'',
-    valorAtual:'R$ 39,99'},
-    //---------------------------------------------
-    {img:'produtos/roupas_Teste/blusa_exemplo.png',
-    alt:'Camiseta',
-    nome:'Camiseta Profissional',
-    valorAntigo:'R$ 299,90',
-    valorAtual:'R$ 159,90'}
-]
+    valorAtual:'R$ 39,99'}
+    ,//---------------------------------------------
+    {img:'produtos/roupas_Teste/conjunto_casal_exemplo.png',
+    alt:'Conjunto',
+    nome:'Super conjunto social de casal para festas de exemplo',
+    valorAntigo:'R$ 199,90',
+    valorAtual:'R$ 129,90'}
+    ,//---------------------------------------------
+    {img:'produtos/roupas_Teste/conjunto_feminino_exemplo.png',
+    alt:'Conjunto',
+    nome:'Conjunto feminino de exemplo',
+    valorAntigo:'R$ 89,90',
+    valorAtual:'R$ 74,49'}
+    ,//---------------------------------------------
+    {img:'produtos/roupas_Teste/conjunto_masculino_exemplo.png',
+    alt:'Conjunto',
+    nome:'Conjunto masculino de exemplo',
+    valorAntigo:'R$ 99,90',
+    valorAtual:'R$ 64,90'}
+    ,//---------------------------------------------
+    {img:'produtos/roupas_Teste/conjunto_unisex_exemplo.png',
+    alt:'Conjunto',
+    nome:'Conjunto unisex de exemplo',
+    valorAntigo:'R$ 74,99',
+    valorAtual:'R$ 69,90'}
+    ,//---------------------------------------------
+    {img:'produtos/roupas_Teste/vestido_exemplo.png',
+    alt:'Vestido',
+    nome:'Vestido social de exemplo',
+    valorAntigo:'',
+    valorAtual:'R$ 127,89'}
+]//||------||------|| FIM DOS PRODUTOS DA LOJA ||------||------||
 
     
 
