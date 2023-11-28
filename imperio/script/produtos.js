@@ -70,13 +70,13 @@ function loadProduct(filtroSelecionado){
                 cont++
                 window.document.querySelector(".shopItens").innerHTML+="<div class='shopProduct'><img src='"+produtosLoja[c].img+"' alt='"+produtosLoja[c].alt+"'><div class='descProduto'><h1 class='nomeProduto'>"+produtosLoja[c].nome+"</h1><p class='antigoProduto'>"+produtosLoja[c].valorAntigo+"</p><p class='valorProduto'>"+produtosLoja[c].valorAtual+"</p></div></div>"
 
-                window.document.querySelector("#msgIntro").innerHTML="- Foram encontrado(s) "+cont+" item(ns) da categoria '"+filtro+"'."
+                window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`
             }
         }//
     }
     if(cont===0){
         window.document.querySelector(".shopItens").innerHTML="<img src='images/icons/saderror.png' alt='nãoencontrado' style='width:48px;padding-top: 100px;'>"
-        window.document.querySelector("#msgIntro").innerHTML="No momento, estamos sem itens da categoria '"+filtro+"'."
+        window.document.querySelector("#msgIntro").innerHTML=`No momento, estamos sem itens da categoria '${filtro}' <a href='#' onclick='loadProduct("none")'>remover filtros</a>.`
     }/*else{
         window.document.querySelector("#shopContainer").innerHTML+="Encontrado "+cont+" Produtos da categoria ' "+filtro+" '."
     }*/

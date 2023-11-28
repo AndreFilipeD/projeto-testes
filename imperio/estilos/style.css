@@ -165,6 +165,14 @@ main{
 	font-weight: 600;
 	color: white;
 }
+#msgIntro > a{
+	color: var(--secbackcolor);
+}
+#msgIntro > a:hover{
+	color: black;
+	background-color: var(--secbackcolor);
+	border-radius: 5px;
+}
 
 #shopContainer{
 	/*background-color: rgb(201, 185, 175);*/
