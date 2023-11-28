@@ -1,0 +1,17 @@
+@charset "UTF-8";
+body{
+    height: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.button{
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+}
+.button:hover{
+    background-color: #cacaca;
+}

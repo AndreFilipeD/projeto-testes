@@ -1,12 +1,12 @@
 var stars = []//Espaço de memória das estrelas
 
-var outfieldMove = 1000 // (100) muito | (1000) pouco
+var outfieldMove = 2000 // (100) muito | (1000) pouco
 //O quando as estrelas fogem do campo de visão baseado nos angulos de saida
-var maxSize = 35 //(10) pequeno | (50) grande
+var maxSize = 5 //(10) pequeno | (50) grande
 //Tamanho máximo da estrela até que ela suma da tela
-var grownFrame = 0.1 //(0.1) pouco | (1) muito
+var grownFrame = 0.005 //(0.1) pouco | (1) muito
 //O quando a estrela cresce por frame
-var frameUpdateTime = 100 //(16) Rapido | (200) Lentidão
+var frameUpdateTime = 16 //(16) Rapido | (200) Lentidão
 //Delay de atualização de quadros
 
 var alt = window.innerHeight //Captura de Altura inicial da tela
@@ -24,7 +24,7 @@ function canvaUpdate(){//Atualiza o canvas para a area de exibição do navegado
 }
 
 function forgeStar(){//Forjando Estrelas
-    for(let i=0;i<1000;i++){
+    for(let i=0;i<10000;i++){
         let x = Math.random() * larg
         let y = Math.random() * alt
         stars.push({"x":x,"y":y,"mx":(x - (larg/2))/outfieldMove,"my":(y - (larg/2))/outfieldMove, "s":Math.random()*maxSize})
@@ -45,9 +45,9 @@ function refreshField(){//Atualização das estrelas
                 stars[i].mx=(stars[i].x - (larg/2))/outfieldMove
                 stars[i].my=(stars[i].y - (alt/2))/outfieldMove
            }else{
-                stars[i].s+=0.1
-                stars[i].x+=stars[i].mx * (stars[i].s)*(stars[i].s)
-                stars[i].y+=stars[i].my * (stars[i].s)*(stars[i].s)
+                stars[i].s+=grownFrame
+                stars[i].x+=stars[i].mx * (stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)
+                stars[i].y+=stars[i].my * (stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)
 
                 ctx.beginPath();//Grafico das estrelas
                 ctx.arc(stars[i].x, stars[i].y, stars[i].s, 0, 2 * Math.PI);
