@@ -25,6 +25,8 @@
 	--titlefont:'Cherly', sans-serif;
 	--sectitlefont:'Arnitta', sans-serif;
 	--maintext:Verdana, Geneva, Tahoma, sans-serif;}
+::selection{
+	background: var(--secbackcolor);}
 *{/* - START - */
     margin: 0px;
     padding: 0px;
@@ -274,6 +276,7 @@ footer{
 	background-color: #FFCAB8;
 	color: black;
 	transition: .4s;
+	/*outline: 3px solid black;*/
 }
 .permaconectado{
 	display: flex;
@@ -290,8 +293,13 @@ footer{
 	background-color: #FFCAB8;
 	transition: .4s;
 	filter: none;
+	/*outline: 3px solid black;*/
 	/*box-shadow: 0px 0px 40px #003547;*/
 }
+/*
+.permaconectado > li > a > img:focus, .permaconectado > li > a > img:active{
+	color: red;
+}*/
 .shadowBox{
 	position: absolute;
 	top: 0%;

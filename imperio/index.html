@@ -15,8 +15,8 @@
 		<div id="leftHeader"><!-- CABEÇALHO DA ESQUERDA -->
 			<img src="images/icons/menu.png" alt="Menu" onclick="clickthrow(1)">
 		</div>
-		<div id="logo"><!-- LOGO CENTRAL RENDERIZADO EM CSS -->
-			<img id="logoImage" src="images/imperiologo.svg" alt="logoimperio">
+		<div id="logo" onclick="cleanProduct()"><!-- LOGO CENTRAL RENDERIZADO EM CSS -->
+			<img id="logoImage" src="images/imperiologo.svg" alt="logo imperio francisca">
 			<h1 id="mainTitle">IMPÉRIO</h1>
 			<h1 id="secTitle">Francisca</h1>
 		</div>
@@ -49,7 +49,7 @@
 				<li><a href="#"><img src="images/footerlogo/youtube.png" alt="youtube"></a></li>
 				<li><a href="#"><img src="images/footerlogo/tiktok.png" alt="tiktok"></a></li>
 				<li><a href="#"><img src="images/footerlogo/linked.png" alt="linkedin"></a></li>
-				<li><a href="#"><img src="images/footerlogo/twitterx.png" alt="x"></a></li>
+				<li><a href="#"><img src="images/footerlogo/twitterx.png" alt="x twitter"></a></li>
 			</ul>
 		</div>
 		<!-- FOOTERBLOCK INSTITUCIONAL -->
@@ -75,16 +75,16 @@
 				<!-- TITULO DA BARRA DE NAVEGAÇÃO -->
 				<h1>Navegue por categoria</h1>
 				<!-- bOTÃO DE FECHAR BARRA DE NAVEGAÇÃO -->
-				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="closeMenu"></span>
+				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="fecharMenu"></span>
 			</div>
 			<ul>
 				<!-- ITENS DA BARRA DE NAVEGAÇÃO -->
-				<li  class="menuItens">○ Mostrar todos</li>
+				<li  class="menuItens" onclick="loadProduct('none'),clickthrow(0)">○ Mostrar todos</li>
 				<li class="menuTitles"><img src="images/menuicons/roupas.png" alt="roupas">Roupas</li>
-				<li class="menuItens">• Camisas</li>
-				<li class="menuItens">• Calças</li>
-				<li class="menuItens">• Vestidos</li>
-				<li class="menuTitles"><img src="images/menuicons/joias.png" alt="">Acessórios</li>
+				<li class="menuItens" onclick="loadProduct('Camisa'),clickthrow(0)">• Camisas</li>
+				<li class="menuItens" onclick="loadProduct('Calça'),clickthrow(0)">• Calças</li>
+				<li class="menuItens" onclick="loadProduct('Vestido'),clickthrow(0)">• Vestidos</li>
+				<li class="menuTitles"><img src="images/menuicons/joias.png" alt="acessorios">Acessórios</li>
 				<li class="menuItens">• Bolsas</li>
 				<li class="menuItens">• Cintos</li>
 				<li class="menuItens">• Porta-Joias</li>
@@ -101,11 +101,11 @@
 		<div class="center_connectPlus">
 			<div id="centerHeart">
 				<h1>Entre em contato</h1>
-				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="closeMenu"></span>
+				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="fecharMenu"></span>
 			</div>
 			<div class="heartSpace">
-				<a class="heartWhats" href=""><img src="images/icons/scart.png" alt="cartshop icon">Chame no Whatsapp</a>
-				<a class="heartInsta" href=""><img src="images/icons/scart.png" alt="cartshop icon">Chame no Instagram</a>
+				<a class="heartWhats" href="#"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Whatsapp</a>
+				<a class="heartInsta" href="https://ig.me/m/imperiofrancisca/" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Instagram</a>
 			</div>
 		</div>
 	
