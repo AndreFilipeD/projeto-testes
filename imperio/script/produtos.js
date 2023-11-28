@@ -1,4 +1,5 @@
 var filtro = "Vestido";
+var cont = 0
 var produtosLoja = [
     //---------------------------------------------
     {img:'produtos/roupas_Teste/blusa_exemplo.png',
@@ -51,7 +52,7 @@ var produtosLoja = [
 
 ]//||------||------|| FIM DOS PRODUTOS DA LOJA ||------||------||
 function cleanProduct(){
-    window.document.querySelector(".shopItens").innerHTML=""
+    window.document.querySelector(".shopItens").innerHTML="";cont=0;
 }
 
 function loadProduct(filtroSelecionado){
@@ -59,12 +60,24 @@ function loadProduct(filtroSelecionado){
     cleanProduct();
     for(c in produtosLoja){
         if(filtro==="none"){
+            cont++
             window.document.querySelector(".shopItens").innerHTML+="<div class='shopProduct'><img src='"+produtosLoja[c].img+"' alt='"+produtosLoja[c].alt+"'><div class='descProduto'><h1 class='nomeProduto'>"+produtosLoja[c].nome+"</h1><p class='antigoProduto'>"+produtosLoja[c].valorAntigo+"</p><p class='valorProduto'>"+produtosLoja[c].valorAtual+"</p></div></div>"
+
+            window.document.querySelector("#msgIntro").innerHTML="Seja bem vindo!"
         }else{
             //produtosLoja[c].categoria===filtro
             if(produtosLoja[c].categoria.indexOf(filtro)!=-1){
+                cont++
                 window.document.querySelector(".shopItens").innerHTML+="<div class='shopProduct'><img src='"+produtosLoja[c].img+"' alt='"+produtosLoja[c].alt+"'><div class='descProduto'><h1 class='nomeProduto'>"+produtosLoja[c].nome+"</h1><p class='antigoProduto'>"+produtosLoja[c].valorAntigo+"</p><p class='valorProduto'>"+produtosLoja[c].valorAtual+"</p></div></div>"
+
+                window.document.querySelector("#msgIntro").innerHTML="- Foram encontrado(s) "+cont+" item(ns) da categoria '"+filtro+"'."
             }
-        }
+        }//
     }
+    if(cont===0){
+        window.document.querySelector(".shopItens").innerHTML="<img src='images/icons/saderror.png' alt='nãoencontrado' style='width:48px;padding-top: 100px;'>"
+        window.document.querySelector("#msgIntro").innerHTML="No momento, estamos sem itens da categoria '"+filtro+"'."
+    }/*else{
+        window.document.querySelector("#shopContainer").innerHTML+="Encontrado "+cont+" Produtos da categoria ' "+filtro+" '."
+    }*/
 }loadProduct("none");

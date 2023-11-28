@@ -150,22 +150,37 @@ main{
  }
 #mainSlider{
 	width: 100%;
-	height: 59vw; /*É AQUI?????????*/
-	overflow-y: none;
-	overflow-x: none;
+	height: 58vw; /*É AQUI????????? 59vw*/
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
+
+#msgIntro{
+	padding-top: 16px;
+	text-align: center;
+	width: 100%;
+	height: 50px;
+	background-color: var(--mainbackcolor);
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 600;
+	color: white;
+}
+
 #shopContainer{
 	/*background-color: rgb(201, 185, 175);*/
 }
 .shopItens{
 	/*background-color: rgb(205, 228, 236);*/
-	margin: 0 auto 0 auto;
+	margin: -4vw auto 0 auto;
 	max-width: 600px;
 
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+
+	font-family: Arial, Helvetica, sans-serif;
+	
 }
 .shopProduct{
 	margin-top: calc(2vw + 15px);
@@ -223,6 +238,10 @@ main{
 	font-weight: 600;
 	font-size: 1.1em;
 	padding-bottom: 5px;
+}
+.failError{
+	font-size: 2em;
+	text-align: center;
 }
 footer{
     display: flex;

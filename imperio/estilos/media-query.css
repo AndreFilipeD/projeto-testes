@@ -109,6 +109,9 @@
         text-shadow: 0px 1px 1px #883636;
         /*color: var(--secbackcolor);*/
     }
+    .shopItens{
+        margin: calc(-3vw + 5px) auto 0 auto;
+    }
     footer{
         display: flex;
         flex-direction: column;
@@ -117,9 +120,10 @@
 
 @media screen and (min-width: 768px) and (max-width: 992px){
     #shopContainer{
-        margin-top: -5vw;
+        margin-top: 1vw;
     }
     .shopItens{
+        margin: calc(-3vw + 0px) auto 0 auto;
         max-width: 800px;
     }
 }
@@ -127,16 +131,17 @@
 @media screen and (min-width: 992px) and (max-width: 1200px){
     /*HERE*/
     #mainSlider{
-        width: 100vw;
-        height: 40vw;
+        width: 100%;
+        height: 400px;
         overflow-y: none;
         overflow-x: none;
     }
     .shopItens{
+        margin: calc(-3vw + 40px) auto 0 auto;
         max-width: 1200px;
     }
     #shopContainer{
-        margin-top: -5vw;
+        margin-top: calc(-10px - .8vw);
     }
 }
 
@@ -150,6 +155,7 @@
         overflow-x: none;
     }
     .shopItens{
+        margin: calc(-3vw + 15px) auto 0 auto;
         max-width: 1450px;
     }
     #shopContainer{
