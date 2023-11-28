@@ -3,20 +3,16 @@ var widthis;
 var mslider = window.document.getElementById("mainSlider");
 window.document.getElementById("sliderbtn1").checked = true;
 var sideMenu = 0;
-
-var sliderloop = setInterval(function(){nextImage()}, 6000)// Atualização automatica do Slider.
-
+var sliderloop = setInterval(function(){nextImage()}, 6000);
 function clickslide(is){//Atualização manual do Slider
   slide = is
   clearInterval(sliderloop);/*Reinicializador de tempo após clicar manualmente*/
   sliderloop = setInterval(function(){nextImage()}, 6000);
 }
-
 function nextImage(){
     if(slide>3){slide=1}else{slide++}//funçao automatica do Slider
     window.document.getElementById("sliderbtn"+slide).checked = true;
 }
-
 function clickthrow(valbutton){
   if(valbutton===0){
     window.document.getElementById("htmlSet").style.overflowY = "scroll";
@@ -50,6 +46,7 @@ function clickthrow(valbutton){
   }
 }
 
+/*
 function widthResizer(){
     
 }
@@ -58,3 +55,4 @@ function widthResizer(){
   
   // Coleta o width da tela ao ser redimensionada
 window.addEventListener('resize', widthResizer)
+*/
