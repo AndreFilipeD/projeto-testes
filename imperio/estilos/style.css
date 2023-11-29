@@ -164,14 +164,17 @@ main{
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 600;
 	color: white;
+	transition: 1s;
 }
 #msgIntro > a{
 	color: var(--secbackcolor);
+	transition: .4s;
 }
 #msgIntro > a:hover{
 	color: black;
 	background-color: var(--secbackcolor);
 	border-radius: 5px;
+	transition: 1s;
 }
 
 #shopContainer{
@@ -268,13 +271,21 @@ footer{
 #creditsFooter{
 	padding: 5px;
 	text-align: center;
-	font-size: .75em;
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #FFCAB8;
+	font-size: .75em;
 }
 #creditsFooter > h3 > a{
 	text-decoration: none;
 	color: #883636;
+	transition: .4s;
+	font-size: 1em;
+}
+#creditsFooter > h3 > a:hover{
+	padding-left: 1px;
+	padding-right: 1px;
+	transition: 1s;
+	font-size: 1.1em;
 }
 .footerblock{
 	margin-right: 6vw;

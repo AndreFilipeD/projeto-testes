@@ -47,8 +47,9 @@ var produtosLoja = [
     nome:'Vestido social de exemplo',
     info:'Vestido social embedado em joias para eventos sociais',
     valorAntigo:'',
-    valorAtual:'R$ 127,89',
+    valorAtual:'R$ 110,89',
     categoria:['Vestido']}
+    
 
 ]//||------||------|| FIM DOS PRODUTOS DA LOJA ||------||------||
 function cleanProduct(){
@@ -76,7 +77,7 @@ function loadProduct(filtroSelecionado){
     }
     if(cont===0){
         window.document.querySelector(".shopItens").innerHTML="<img src='images/icons/saderror.png' alt='nãoencontrado' style='width:48px;padding-top: 100px;'>"
-        window.document.querySelector("#msgIntro").innerHTML=`No momento, estamos sem itens da categoria '${filtro}' <a href='#' onclick='loadProduct("none")'>remover filtros</a>.`
+        window.document.querySelector("#msgIntro").innerHTML=`No momento, estamos sem itens da categoria '${filtro}' <a href='#' onclick='loadProduct("none")' style="padding:2px;">remover filtros</a>.`
     }/*else{
         window.document.querySelector("#shopContainer").innerHTML+="Encontrado "+cont+" Produtos da categoria ' "+filtro+" '."
     }*/

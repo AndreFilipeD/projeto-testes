@@ -116,6 +116,10 @@
         display: flex;
         flex-direction: column;
     }
+    #msgIntro{
+        padding-top: 18px;
+        font-size: .7em;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px){
@@ -150,12 +154,12 @@
         min-height: 100px;
     }
     #mainSlider{
-        height: 400PX;
+        height: 400px;
         overflow-y: none;
         overflow-x: none;
     }
     .shopItens{
-        margin: calc(-3vw + 15px) auto 0 auto;
+        margin: calc(-25px) auto 0 auto;
         max-width: 1450px;
     }
     #shopContainer{
@@ -168,5 +172,10 @@
         width: 200px;
         height: 280px;
         border: 1px solid rgb(207, 207, 207);
+    }
+    #msgIntro{
+        margin: auto;
+        max-width: 1200px;
+        
     }
 }
