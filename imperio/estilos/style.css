@@ -199,8 +199,8 @@ main{
 	margin-left: calc(.5vw);
 	width: 220px;
 	height: 300px;
-	border: 1px solid rgb(233, 233, 233);
-	border-radius: 3px;
+	border: 1px solid rgb(240, 240, 240);
+	border-radius: 2px;
 	display: flex;
 	flex-direction: column;
 	transition: .1s;
