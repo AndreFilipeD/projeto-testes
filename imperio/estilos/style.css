@@ -7,16 +7,16 @@
     font-family: 'Arnitta';
     src: url('../fontes/Arnitta\ Callina.otf')
     format('opentype');}
-@keyframes menuOpen{
+@keyframes menuOpen{ /* ANIMAÇÃO MENU ABRINDO */
 	0%{left: -350px;display: absolute;}
 	100%{left: 0px;}}
-@keyframes menuClose{
+@keyframes menuClose{ /* ANIMAÇÃO MENU FECHANDO */
 	0%{left: 0px;}
 	100%{left: -350px;display: none;}}
-@keyframes cartOpen{
+@keyframes cartOpen{ /* ANIMAÇÃO CARRINHO ABRINDO */
 	0%{left: 100%;}
 	100%{left: calc(100% - 350px);}}
-@keyframes cartClose{
+@keyframes cartClose{ /* ANIMAÇÃO CARRINHO FECHANDO */
 	0%{display: block;left: calc(100% - 350px);}
 	100%{left: 100%;}}
 :root{/* - VARIAVEIS - */
@@ -25,18 +25,18 @@
 	--titlefont:'Cherly', sans-serif;
 	--sectitlefont:'Arnitta', sans-serif;
 	--maintext:Verdana, Geneva, Tahoma, sans-serif;}
-::selection{
+::selection{ /* COR DE SELEÇÃO AO ARRASTAR MOUSE EM OBJETOS */
 	background: var(--secbackcolor);}
 *{/* - START - */
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;}
-html{/*OVERFLOW Y NONE WHEN START*/
+html{/* OVERFLOW Y NONE AO INICIAR */
 	overflow-y: none;}
-body{/*BETTER WAY TO START WIDTH AND HEIGHT BODY*/
+body{/* MELHOR MANEIRA DE COMEÇAR O WIDTH E O HEIGHT EM BODY */
 	width: 100%;
 	min-height: 100vh;}
-header{
+header{ /* HEADER */
 	display: flex;
 	justify-content: center;
    	height: 90px;
@@ -143,18 +143,27 @@ header{
 	margin-left: -125px;
 	text-shadow: 0px 1px 1px #883636;
 }
-main{
+main{ /* MAIN */
 	flex: 1;
-	width: 100%;
+	width:100%;
 	background-color: rgb(255, 255, 255);
- }
+}
 #mainSlider{
 	width: 100%;
 	height: 58vw; /*É AQUI????????? 59vw*/
 	overflow-y: hidden;
 	overflow-x: hidden;
 }
-
+#showProduct{
+	margin: auto;
+	max-width: 1200px;
+	display: flex;
+	flex-direction: row;
+}
+#showProduct > .pshowMainimage{
+	width: 70%;
+	padding: 50px;
+}
 #msgIntro{
 	padding-top: 16px;
 	text-align: center;
@@ -176,7 +185,6 @@ main{
 	border-radius: 5px;
 	transition: 1s;
 }
-
 #shopContainer{
 	/*background-color: rgb(201, 185, 175);*/
 }
@@ -254,7 +262,7 @@ main{
 	font-size: 2em;
 	text-align: center;
 }
-footer{
+footer{ /* FOOTER */
     display: flex;
     flex-direction: row-reverse;
 	justify-content: left;
@@ -300,7 +308,7 @@ footer{
 .footerblock > ul > li{
 	padding-top: 5px;
 }
-/*.footerblock > ul > li > a*/.footeritem > a{
+.footeritem > a{
 	font-family: Arial, Helvetica, sans-serif;
 	text-decoration: none;
 	color: white;
@@ -334,10 +342,6 @@ footer{
 	/*outline: 3px solid black;*/
 	/*box-shadow: 0px 0px 40px #003547;*/
 }
-/*
-.permaconectado > li > a > img:focus, .permaconectado > li > a > img:active{
-	color: red;
-}*/
 .shadowBox{
 	position: absolute;
 	top: 0%;
@@ -347,7 +351,7 @@ footer{
 	background-color: rgba(0, 0, 0, 0.250);
 	overflow-y: hidden;
 }
-/* ------------ LEFT MENU ------------ */
+/* ------------ LEFT DINAMIC MENU ------------ */
 .left_menuBar{
 	font-family: var(--maintext);
 	position: absolute;
@@ -395,7 +399,6 @@ footer{
 	filter: invert();
 	margin-right: 10px;
 }
-
 #menuHeader{
 	display: flex;
 	flex-direction: row;
@@ -425,7 +428,7 @@ footer{
 	filter: none;
 	transition: .4s;
 }
-/* ------------ CART MENU ------------ */
+/* ------------ RIGHT SHOPCART LIST ------------ */
 .right_cartShop{
 	font-family: var(--maintext);
 	display: none;
@@ -497,17 +500,21 @@ footer{
 	display: flex;
 	flex-direction: row;
 }
-#centerHeart > h1{width: 80%;}
+#centerHeart > h1{
+	width: 80%;
+}
 #centerHeart > span{
 	width: 20%;
 	display: flex;
 	justify-content: center;
 	transition: 1s;
-	border-radius: 20px;}
+	border-radius: 20px;
+}
 #centerHeart > span:hover{
 	background-color: #77c9c9;
 	filter: invert();
-	transition: .4s;}
+	transition: .4s;
+}
 #centerHeart > span > img{padding: 15px 5px;}
 .center_connectPlus > p{
 	text-align: center;
