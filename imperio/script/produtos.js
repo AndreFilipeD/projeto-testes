@@ -9,6 +9,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/blusa_exemplo.png',
     nome:'Blusa de exemplo',
     info:'Blusa branca padrão feita de algodão',
+    peso:'200g',tamanho:'M',material:'algodão',
     valorAntigo:'',
     valorAtual:'R$ 39,99',
     categoria:['Camisa']}
@@ -17,6 +18,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/conjunto_casal_exemplo.png',
     nome:'Super conjunto social de casal para festas de exemplo',
     info:'Conjunto social de luxo para eventos de alto nivel',
+    peso:'200g',tamanho:'M',material:'algodão',
     valorAntigo:'R$ 199,90',
     valorAtual:'R$ 129,90',
     categoria:['Camisa','Vestido','Calça']}
@@ -25,6 +27,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/conjunto_feminino_exemplo.png',
     nome:'Conjunto feminino de exemplo',
     info:'Conjunto de peças feminina para o dia a dia',
+    peso:'200g',tamanho:'M',material:'algodão',
     valorAntigo:'R$ 89,90',
     valorAtual:'R$ 74,49',
     categoria:['Camisa','Vestido']}
@@ -33,6 +36,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/conjunto_masculino_exemplo.png',
     nome:'Conjunto masculino de exemplo',
     info:'Conjunto masculino leve e respirável para a prática de esporte',
+    peso:'200g',tamanho:'M',material:'algodão',
     valorAntigo:'R$ 99,90',
     valorAtual:'R$ 64,90',
     categoria:['Camisa','Calça']}
@@ -41,6 +45,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/conjunto_unisex_exemplo.png',
     nome:'Conjunto unisex de exemplo',
     info:'Camiseta branca e calça jeans unisex padrão para uso geral',
+    peso:'200g',tamanho:'M',material:'algodão',
     valorAntigo:'R$ 74,99',
     valorAtual:'R$ 69,90',
     categoria:['Camisa','Calça']}
@@ -49,6 +54,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/vestido_exemplo.png',
     nome:'Vestido social de exemplo',
     info:'Vestido social embedado em joias para eventos sociais',
+    peso:'200g',tamanho:'M',material:'algodão',
     valorAntigo:'',
     valorAtual:'R$ 110,89',
     categoria:['Vestido']}
