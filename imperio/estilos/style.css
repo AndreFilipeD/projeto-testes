@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 @font-face {/* - FONTE CHERLY - */
 	font-family: 'Cherly';
 	src: url('../fontes/Cherly.otf')
@@ -7,6 +8,7 @@
     font-family: 'Arnitta';
     src: url('../fontes/Arnitta\ Callina.otf')
     format('opentype');}
+
 @keyframes menuOpen{ /* ANIMAÇÃO MENU ABRINDO */
 	0%{left: -350px;display: absolute;}
 	100%{left: 0px;}}
@@ -155,54 +157,73 @@ main{ /* MAIN */
 	overflow-x: hidden;
 }
 #showProduct{
-	border: 1px solid black;
-	margin: auto;
+	/*border: 1px solid black;*/
+	margin: 40px auto 80px auto;
 	max-width: 1200px;
-	max-height: 600px;
-	display: grid;
-	
-	grid-template-columns: 1fr 1fr;
+	/*max-height: 800px;*/
+	padding: 25px 15px 0px 15px;
+	display: none;
+	gap: 10px;
+	grid-template-columns: 1fr 1.3fr;
     grid-template-rows: auto auto auto;
 	grid-template-areas: "def mimg" "share simg" "cart cart";
 }
 .pshowDefinition{
-	width: fit-content;
+	border-right: 1px solid rgb(238, 238, 238);
+	width: 100%;
 	grid-area: def;
+	line-height: 20px;
+}
+.pshowName{
+	line-height: 33px;
+	color: #3a3a3a;
+	width: 100%;
+	font-family: 'Dosis', sans-serif;
+	font-size: calc(1.4em + 1vw);
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+.pshowDef{
+	width: 100%;
+	font-family: var(--maintext);
+	font-size: .8em;
+	
 }
 .pshowMainimage{
 	width: 100%;
-	padding-left: 10vw;
-	padding-right: 10vw;
-	border: 1px solid red;
+	padding-left: 5vw;
+	padding-right: 5vw;
+	
+
 	grid-area: mimg;
 }
 .pshowShare{
-	border: 1px solid red;
+	border-right: 1px solid rgb(245, 245, 245);
 	grid-area: share;
 }
 .pshowSecimages{
 	grid-area: simg;
 	height: fit-content;
 	display: grid;
-	border: 1px solid rgb(55, 0, 255);
+	
 	grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 }
 .SecimgA, .SecimgB, .SecimgC{
+	outline: 0px double var(--mainbackcolor);
 	width: 100%;
 	padding-left: 3vw;
 	padding-right: 3vw;
 	transition: .1s;
 }
 .SecimgA:hover, .SecimgB:hover, .SecimgC:hover{
-	border-radius: 4px;
-	outline: 3px solid var(--mainbackcolor);
+	outline: 4px solid var(--mainbackcolor);
 	transition: .1s;
 	cursor: pointer;
 }
 .pshowCartadd{
 	grid-area: cart;
-	border: 1px solid green;
+	/*border: 1px solid green;*/
 }
 
 #msgIntro{
@@ -249,7 +270,7 @@ main{ /* MAIN */
 	width: 220px;
 	height: 300px;
 	border: 1px solid rgb(240, 240, 240);
-	border-radius: 2px;
+	outline: 0px double var(--mainbackcolor);
 	display: flex;
 	flex-direction: column;
 	transition: .1s;
