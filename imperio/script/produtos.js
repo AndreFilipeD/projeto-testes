@@ -101,21 +101,25 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         window.document.getElementById('showProduct').style="display:none;"
         window.document.querySelector("#mainSlider").style="display: block;"
     }else{
+        //Coletando preço para atualização
+        antigoval = Number.parseFloat(produtosLoja[showIs].valorAntigo)
+        atualval = Number.parseFloat(produtosLoja[showIs].valorAtual)
+        //Esconde Slider para mostrar o produto
         window.document.querySelector("#mainSlider").style="display: none;"
-        //Rola a tela até o topo
-        window.scrollTo(0,0)
-        //Altera a mensagem para Produtos Similares
+        //Rola pagina da tela até o topo
+        window.scrollTo(0,0);
+        //Altera a mensagem para Veja mais
         window.document.querySelector("#msgIntro").innerHTML="Veja mais"
         //Habilita visualização do mostruário
         window.document.getElementById('showProduct').style="display:grid;"
-        //Atualiza NOME do produto selecionado
-        //window.document.querySelector(".pshowName").innerHTML=produtosLoja[showIs].nome
         //Atualiza PESO, TAMANHO, MATERIAL e INFORMAÇÃO
-        //.pshowCartadd
-        //window.document.querySelector(".pshowDef").
         window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`
-        //AtualizaCart -TA UMA BAGUNÇA PROMETO ARRUMAR
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`/*cart is here*/
+        //Verificando se terá valor anterior Para assim atualizar corretamente
+        if(antigoval>0){
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`
+        }else{// /\ Valor anterior > 0 || \/ Valor anterior < 0
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`
+        }
         //Atualiza IMAGEM PRINCIPAL produto selecionado
         window.document.querySelector(".pshowMainimage").setAttribute('src',produtosLoja[showIs].img)
         //Atualiza IMAGENS SEGUNDARIAS prod.selecionado
@@ -123,15 +127,11 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         window.document.querySelector(".SecimgB").setAttribute('src',produtosLoja[showIs].img)
         window.document.querySelector(".SecimgC").setAttribute('src',produtosLoja[showIs].img)
         //Atualiza DESCONTO PORCENTAGEM produto selecionado
-        antigoval = Number.parseFloat(produtosLoja[showIs].valorAntigo)
-        atualval = Number.parseFloat(produtosLoja[showIs].valorAtual)
         if(antigoval > atualval){
             window.document.querySelector(".pshowPromo").style="display: absolute;"
             window.document.querySelector(".pshowPromo").innerHTML=`${Math.round(((100/antigoval)*atualval)-100)}% OFF`
-        }else{
+        }else{// /\ Calcula e mostra Desconto em % na foto || \/ Esconde desconto
             window.document.querySelector(".pshowPromo").style="display: none;"
         }
-        //Atualiza o preço
-        
     }
 }
