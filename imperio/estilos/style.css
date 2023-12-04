@@ -8,7 +8,6 @@
     font-family: 'Arnitta';
     src: url('../fontes/Arnitta\ Callina.otf')
     format('opentype');}
-
 @keyframes menuOpen{ /* ANIMAÇÃO MENU ABRINDO */
 	0%{left: -350px;display: absolute;}
 	100%{left: 0px;}}
@@ -158,18 +157,19 @@ main{ /* MAIN */
 }
 #showProduct{
 	/*border: 1px solid black;*/
-	margin: 40px auto 80px auto;
+	margin: 20px auto 80px auto;
 	max-width: 1200px;
 	/*max-height: 800px;*/
 	padding: 25px 15px 0px 15px;
 	display: none;
 	gap: 10px;
-	grid-template-columns: 1fr 1.3fr;
+	grid-template-columns: 1.3fr 1fr;
     grid-template-rows: auto auto auto;
-	grid-template-areas: "def mimg" "share simg" "cart cart";
+	grid-template-areas: "mimg def" "simg share" "cart cart";
 }
 .pshowDefinition{
-	border-right: 1px solid rgb(238, 238, 238);
+	border-left: 1px solid rgb(238, 238, 238);
+	padding-left: 10px;
 	width: 100%;
 	grid-area: def;
 	line-height: 20px;
@@ -189,17 +189,78 @@ main{ /* MAIN */
 	font-size: .8em;
 	
 }
+.olderPrice{
+	color: rgb(150, 150, 150);
+	font-family: 'Dosis', sans-serif;
+	font-size: 1.5em;
+	font-weight: 100;
+	text-decoration: line-through;
+}
+.cartButton{
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	line-height: 30px;
+	margin-top: 15vw;
+	height: fit-content;
+	font-family: 'Dosis', sans-serif;
+	font-size: 3em;
+	color: white;
+	background-color: #36cb90;
+	box-shadow: 0px 4px 0px #2ca172;
+}
+.cartButton:hover{
+	cursor: pointer;
+}
+.actualPrice{
+	color: rgb(22, 22, 22);
+	font-family: 'Dosis', sans-serif;
+	font-size: 2.2em;
+}
+.pshowMainimagespace{
+	width: 100%;
+	padding-top: calc(60px - 5vw);
+	/*padding-left: 5vw;
+	padding-right: 5vw;*/
+	grid-area: mimg;
+	overflow: hidden;
+}
 .pshowMainimage{
 	width: 100%;
-	padding-left: 5vw;
-	padding-right: 5vw;
+}
+.pshowPromo{
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: calc(.55em + 1.1vw);
+	font-weight: 600;
+	text-align: center;
+	position: sticky;
+	/*position: absolute;*/
+	height: fit-content;
+	/*width: 44vw;*/
+	max-width: 100%;
+	margin-top: -3vw;
 	
-
-	grid-area: mimg;
+	color: white;
+	background-color: #39c08ae1;
 }
 .pshowShare{
+	color: var(--mainbackcolor);
+	font-family: 'Dosis', sans-serif;
+	font-size: 1.4em;
+	font-weight: 600;
 	border-right: 1px solid rgb(245, 245, 245);
 	grid-area: share;
+}
+.pshowShare > img{
+	width: calc(10px + 3vw);
+	transition: 1s;
+}
+.pshowShare > img:hover{
+	border-radius: 9px;
+	width: calc(10px + 3vw);
+	background-color: var(--secbackcolor);
+	transition: .4s;
+	cursor: pointer;
 }
 .pshowSecimages{
 	grid-area: simg;
@@ -217,11 +278,16 @@ main{ /* MAIN */
 	transition: .1s;
 }
 .SecimgA:hover, .SecimgB:hover, .SecimgC:hover{
-	outline: 4px solid var(--mainbackcolor);
+	outline: 3px solid var(--mainbackcolor);
 	transition: .1s;
 	cursor: pointer;
 }
 .pshowCartadd{
+	padding-left: 20px;
+	width: 100%;
+	font-family: var(--maintext);
+	font-size: .8em;
+
 	grid-area: cart;
 	/*border: 1px solid green;*/
 }
@@ -277,7 +343,7 @@ main{ /* MAIN */
 }
 .shopProduct:hover{
 	cursor: pointer;
-	outline: 4px solid var(--mainbackcolor);
+	outline: 3px solid var(--mainbackcolor);
 	transition: .1s;
 }
 .shopProduct > img{
