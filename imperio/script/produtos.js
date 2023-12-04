@@ -104,16 +104,18 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         window.document.querySelector("#mainSlider").style="display: none;"
         //Rola a tela até o topo
         window.scrollTo(0,0)
+        //Altera a mensagem para Produtos Similares
+        window.document.querySelector("#msgIntro").innerHTML="Veja mais"
         //Habilita visualização do mostruário
         window.document.getElementById('showProduct').style="display:grid;"
         //Atualiza NOME do produto selecionado
-        window.document.querySelector(".pshowName").innerHTML=produtosLoja[showIs].nome
+        //window.document.querySelector(".pshowName").innerHTML=produtosLoja[showIs].nome
         //Atualiza PESO, TAMANHO, MATERIAL e INFORMAÇÃO
         //.pshowCartadd
         //window.document.querySelector(".pshowDef").
-        window.document.querySelector(".pshowCartadd").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`
+        window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`
         //AtualizaCart -TA UMA BAGUNÇA PROMETO ARRUMAR
-        window.document.querySelector(".pshowDef").innerHTML=`<strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong><div class="cartButton">Adicionar ao carrinho</div>`
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`/*cart is here*/
         //Atualiza IMAGEM PRINCIPAL produto selecionado
         window.document.querySelector(".pshowMainimage").setAttribute('src',produtosLoja[showIs].img)
         //Atualiza IMAGENS SEGUNDARIAS prod.selecionado
