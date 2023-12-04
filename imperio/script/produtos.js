@@ -22,7 +22,7 @@ var produtosLoja = [
     nome:'Super conjunto social de casal para festas de exemplo',
     info:'Conjunto social de luxo para eventos de alto nivel',
     peso:'853g',tamanho:'M, P, G',material:'algodão, poliester e nanofibras',
-    valorAntigo:'199,90',
+    valorAntigo:'599,90',
     valorAtual:'129,90',
     categoria:['Camisa','Vestido','Calça']}
     ,//---------------------------------------------
@@ -58,7 +58,7 @@ var produtosLoja = [
     nome:'Vestido social de exemplo',
     info:'Vestido social embedado em joias para eventos sociais',
     peso:'679g',tamanho:'M',material:'nanofibras e zircônio',
-    valorAntigo:'9999,00',
+    valorAntigo:'569,35',
     valorAtual:'378,89',
     categoria:['Vestido']}
 
