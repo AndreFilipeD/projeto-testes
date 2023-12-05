@@ -140,11 +140,21 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
     }
 }
 
-function addCart(){
+function addCart(sel){
     window.document.querySelector(".cartList").innerHTML="";
-    carrinhoLoja.push(produtosLoja[mostruarioIndice]);
+    if(sel===1){carrinhoLoja.push(produtosLoja[mostruarioIndice]);
     produtosLoja[mostruarioIndice].qnt = 1;
+    }
     for(c in carrinhoLoja){
-        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus">+</div><div class="cartQntValue">1</div><div class="cartECless">-</div><img class="cartECjunk" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
+        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">1</div><div class="cartECless" onclick="changeCart(${c},1)">-</div><img class="cartECjunk" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div> pos: ${c} ind:${carrinhoLoja[c].indice}</div>`
+    }
+}
+
+function changeCart(selected, action){
+    switch(action){
+        case 0:
+            carrinhoLoja.splice(selected, 1);
+            addCart(0);
+            break;
     }
 }
