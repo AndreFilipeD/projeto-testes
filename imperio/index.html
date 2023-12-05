@@ -48,7 +48,7 @@
 			<h2 class="pshowPrice"></h2>
 		</div>
 		<!-- BOX CARTBUTTONADD -->
-		<div class="cartButton">Adicionar ao carrinho
+		<div class="cartButton" onclick="addCart(), clickthrow(2)">Adicionar ao carrinho
 		</div>
 		<!-- BOX SHARE CONTENT -->
 		<div class="pshowShare"> Compartilhe <br>
@@ -137,7 +137,9 @@
 			</div>
 			<div class="cartBody">
 				<div class="cartList">Você ainda não tem nenhum item em seu carrinho</div>
-				<div class="cartTotal"> Teste total <br> 99,90 TESTE TOTAL <br>TOTAL TESTE TOTAL</div>
+				<div class="cartTotal">
+					<div class="cartSendButton" onclick="addCart()">Enviar no Whatsapp</div>
+				</div>
 			</div>
 		</div>
 		<!-- CONECTE-SE -->
@@ -150,19 +152,7 @@
 				<a class="heartWhats" href="https://api.whatsapp.com/send/?phone=19997597681&text=🦒Olá, Império Francisca! Gostaria de entrar em contato para tirar uma dúvida. 💖" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Whatsapp</a>
 				<a class="heartInsta" href="https://ig.me/m/imperiofrancisca/" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Instagram</a>
 			</div>
-		</div>
-		<!-- PQ TEM 2 CENTER CONNECTPLUS???
-		<div class="center_connectPlus">
-			<div id="centerHeart">
-				<h1>Entre em contato</h1>
-				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="fecharMenu"></span>
-			</div>
-			<div class="heartSpace">
-				<a class="heartWhats" href="https://api.whatsapp.com/send/?phone=19997597681&text=🦒Olá, Império Francisca! Gostaria de entrar em contato para tirar uma dúvida. 💖" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Whatsapp</a>
-				<a class="heartInsta" href="https://ig.me/m/imperiofrancisca/" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Instagram</a>
-			</div>
-		</div> -->
-	
+		</div>	
 	<!-- SCRIPT GERAL DA PAGINA -->
 	<script src="script/script.js">
 	</script>

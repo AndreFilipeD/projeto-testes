@@ -28,6 +28,8 @@
 	--normalButton:#36cb90;
 	--normaltransparentButton:#39c08ae1;
 	--heavyButton:#2ca172;
+	--whatsColor:#25D366;
+	--lightwhatsColor:#2ceb72;
 	--titlefont:'Cherly', sans-serif;
 	--sectitlefont:'Arnitta', sans-serif;
 	--arialFont: Arial, Helvetica, sans-serif;
@@ -369,13 +371,16 @@ main{ /* MAIN */
 }
 .antigoProduto{
 	font-family: var(--usualFont);
-	/*font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
 	width: 100%;
 	text-align: center;
 	text-decoration: line-through;
 	color: gray;
 	margin-bottom: -5px;
-	font-size: .95em;
+	font-size: .9em;
+}
+.smallpricetext{
+	font-size: .8em;
+	font-weight: 100;
 }
 .nomeProduto{
 	height: 100%;
@@ -566,14 +571,12 @@ footer{ /* FOOTER */
 	left: 100%;
 	width: 350px;
 	height: 100%;
-	border: 1px solid blue;
 	background-color: white;
 	box-shadow: -10px 0px 10px rgba(0, 0, 0, 0.075);
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
 }
 .cartBody{
-	border: 1px solid rgb(255, 0, 0);
 	width: 100%;
 	height: 100%;
 	display: grid;
@@ -582,17 +585,107 @@ footer{ /* FOOTER */
 	grid-template-areas: "cartlist" "carttotal";	
 }
 .cartList{
-	border: 1px solid rgb(255, 0, 190);
 	grid-area: cartlist;
 	text-align: center;
+	overflow-y: scroll;
 }
 .cartTotal{
-	border: 1px solid blue;
 	width: 100%;
 	height: 80%;
 	box-shadow: 0px -5px 10px rgb(0, 0, 0, 0.075);
 	grid-area: carttotal;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 2fr 1fr;
+	grid-template-areas: "resumetotal" "sendbutton";
 }
+.cartSendButton{
+	border-radius: 20px;
+	text-align: center;
+	padding: 15px;
+	margin: 15px;
+	background-color: var(--whatsColor);
+	grid-area: sendbutton;
+	transition: .4s;
+}
+.cartSendButton:hover{
+	background-color: var(--lightwhatsColor);
+	transition: .4s;
+	cursor: pointer;
+}
+.cartElement{
+	border-radius: 20px;
+	margin: 15px;
+	width: 90%;
+	height: fit-content;
+	border: 1px solid var(--verylightgray);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.137);
+	padding: 10px;
+	display: grid;
+	gap: 5px;
+	grid-template-columns: 1.5fr 3fr;
+	grid-template-rows: 1.5fr auto-fill;
+}
+.cartElementImg{
+	width: 100%;
+	grid-column: 1;
+	grid-row: 1;
+}
+.cartElementName{
+	font-size: .8em;
+	grid-column: 2;
+	grid-row: 1;
+	text-align: start;
+}
+.cartElementInfo{
+	font-size: .7em;
+	grid-column: 1;
+	grid-row: 2;
+}
+.cartElementConfig{
+	padding-top: 10px;
+	font-size: .7em;
+	grid-column: 2;
+	grid-row: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+.cartECplus{
+	font-family: monospace;
+
+	font-size: 2em;
+	padding: 3px 9px 0px 9px;
+	margin-right: 10px;
+	border-radius: 30px;
+
+	outline: 1px solid gray;
+	box-shadow: 2px 2px 5px #00000020;
+}
+.cartECless{
+	font-family: monospace;
+
+	font-size: 2em;
+	padding: 4px 9px 0px 9px;
+	margin-right: 10px;
+	border-radius: 30px;
+
+	outline: 1px solid gray;
+	box-shadow: 2px 2px 5px #00000020;
+
+}
+.cartECless:hover, .cartECplus:hover{
+	outline: 3px solid var(--mainbackcolor);
+	transition: .4s;
+	cursor: pointer;
+}
+.cartQntValue{
+	font-size: 2em;
+	margin-right: 10px;
+}
+.cartECjunk{width: 30px;height: 30px;margin-right: 10px;filter: contrast(0%);transition: .5s;}
+.cartECjunk:hover{filter: none;transition: .5s;cursor: pointer;}
+
 #cartHeader{
 	display: flex;
 	flex-direction: row;

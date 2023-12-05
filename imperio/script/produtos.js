@@ -5,58 +5,60 @@ var filtro = "none";
 var cont = 0;
 var antigoval = 0;
 var atualval = 0;
+var mostruarioIndice = -1;
+var carrinhoLoja = []
 var produtosLoja = [
     //---------------------------------------------
-    {indice:0, alt:'Camiseta',
+    {indice:0,qnt:0,alt:'Camiseta',
     img:'produtos/roupas_Teste/blusa_exemplo.png',
     nome:'Blusa de exemplo',
     info:'Blusa branca padrão feita de algodão',
-    peso:'198g',tamanho:'M',material:'algodão',
+    peso:'198g',cor:'azul',tamanho:'M',material:'algodão',
     valorAntigo:'',
     valorAtual:'39,99',
     categoria:['Camisa']}
     ,//---------------------------------------------
-    {indice:0, alt:'Conjunto',
+    {indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_casal_exemplo.png',
     nome:'Super conjunto social de casal para festas de exemplo',
     info:'Conjunto social de luxo para eventos de alto nivel',
-    peso:'853g',tamanho:'M, P, G',material:'algodão, poliester e nanofibras',
+    peso:'853g',cor:'vermelho',tamanho:'M, P, G',material:'algodão, poliester e nanofibras',
     valorAntigo:'599,90',
     valorAtual:'129,90',
     categoria:['Camisa','Vestido','Calça']}
     ,//---------------------------------------------
-    {indice:0, alt:'Conjunto',
+    {indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_feminino_exemplo.png',
     nome:'Conjunto feminino de exemplo',
     info:'Conjunto de peças feminina para o dia a dia',
-    peso:'378g',tamanho:'M',material:'algodão e poliester',
+    peso:'378g',cor:'verde',tamanho:'M',material:'algodão e poliester',
     valorAntigo:'89,90',
     valorAtual:'74,49',
     categoria:['Camisa','Vestido']}
     ,//---------------------------------------------
-    {indice:0, alt:'Conjunto',
+    {indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_masculino_exemplo.png',
     nome:'Conjunto masculino de exemplo',
     info:'Conjunto masculino leve e respirável para a prática de esporte',
-    peso:'328g',tamanho:'M',material:'Poliester',
+    peso:'328g',cor:'branco',tamanho:'M',material:'Poliester',
     valorAntigo:'99,90',
     valorAtual:'64,90',
     categoria:['Camisa','Calça']}
     ,//---------------------------------------------
-    {indice:0, alt:'Conjunto',
+    {indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_unisex_exemplo.png',
     nome:'Conjunto unisex de exemplo',
     info:'Camiseta branca e calça jeans unisex padrão para uso geral',
-    peso:'521g',tamanho:'M',material:'algodão e Jeans',
+    peso:'521g',cor:'preto e azul',tamanho:'M',material:'algodão e Jeans',
     valorAntigo:'74,99',
     valorAtual:'69,90',
     categoria:['Camisa','Calça']}
     ,//---------------------------------------------
-    {indice:0, alt:'Vestido',
+    {indice:0,qnt:0,alt:'Vestido',
     img:'produtos/roupas_Teste/vestido_exemplo.png',
     nome:'Vestido social de exemplo',
     info:'Vestido social embedado em joias para eventos sociais',
-    peso:'679g',tamanho:'M',material:'nanofibras e zircônio',
+    peso:'679g',cor:'rosa',tamanho:'M',material:'nanofibras e zircônio',
     valorAntigo:'569,35',
     valorAtual:'378,89',
     categoria:['Vestido']}
@@ -78,11 +80,11 @@ function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁ
     for(c in produtosLoja){
         if(filtro==="none"){
             cont++
-            window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'>${unitMonetaria+produtosLoja[c].valorAtual}</p></div></div>`;
+            window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? "de: "+ unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'><strong class="smallpricetext">por </strong>${unitMonetaria+produtosLoja[c].valorAtual} <strong class="smallpricetext"> à vista</strong></p></div></div>`;
             window.document.querySelector("#msgIntro").innerHTML="Seja bem vindo!";
         }else if(produtosLoja[c].categoria.indexOf(filtro)!=-1){
                 cont++;
-                window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'>${unitMonetaria+produtosLoja[c].valorAtual}</p></div></div>`;
+                window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? "de: "+unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'><strong class="smallpricetext">por </strong>${unitMonetaria+produtosLoja[c].valorAtual} <strong class="smallpricetext"> à vista</strong></p></div></div>`;
 
                 window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`;
         }
@@ -99,7 +101,10 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
     if(showIs === -1){
         window.document.getElementById('showProduct').style="display:none;";
         window.document.querySelector("#mainSlider").style="display: block;";
+        mostruarioIndice = -1;
     }else{
+        //Coletando Indice de Mostruário atual
+        mostruarioIndice = showIs;
         //Coletando preço para atualização
         antigoval = Number.parseFloat(produtosLoja[showIs].valorAntigo);
         atualval = Number.parseFloat(produtosLoja[showIs].valorAtual);
@@ -111,13 +116,13 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         window.document.querySelector("#msgIntro").innerHTML="Veja mais";
         //Habilita visualização do mostruário
         window.document.getElementById('showProduct').style="display:grid;";
-        //Atualiza PESO, TAMANHO, MATERIAL e INFORMAÇÃO
-        window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`;
+        //Atualiza PESO, COR, TAMANHO, MATERIAL e INFORMAÇÃO
+        window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Cor: </strong>${produtosLoja[showIs].cor}<strong><br>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`;
         //Verificando se terá valor anterior Para assim atualizar corretamente
         if(antigoval>0){
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`;
-        }else{// /\ Valor anterior > 0 || \/ Valor anterior < 0
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`;
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">de: R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual}<strong class="smallpricetext"> à vista</strong></strong>`;
+        }else{// /\ Valor anterior > 0 || \/ Valor anterior =< 0
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual}<strong class="smallpricetext"> à vista</strong></strong>`;
         }
         //Atualiza IMAGEM PRINCIPAL produto selecionado
         window.document.querySelector(".pshowMainimage").setAttribute('src',produtosLoja[showIs].img);
@@ -132,5 +137,14 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         }else{// /\ Calcula e mostra Desconto em % na foto || \/ Esconde desconto
             window.document.querySelector(".pshowPromo").style="display: none;";
         }
+    }
+}
+
+function addCart(){
+    window.document.querySelector(".cartList").innerHTML="";
+    carrinhoLoja.push(produtosLoja[mostruarioIndice]);
+    produtosLoja[mostruarioIndice].qnt = 1;
+    for(c in carrinhoLoja){
+        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus">+</div><div class="cartQntValue">1</div><div class="cartECless">-</div><img class="cartECjunk" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
     }
 }
