@@ -80,7 +80,7 @@
 		<div class="footerblock">
 			<h1>Permaneça conectado</h1>
 			<ul class="permaconectado">
-				<!-- ITENS DE PERMANEÇA CONECTADO -->
+				<!-- ITENS DE PERMANEÇA CONECTADO RODAPÉ -->
 				<li><a href="https://api.whatsapp.com/send/?phone=19997597681&text=🦒Olá, Império Francisca! Gostaria de entrar em contato para tirar uma dúvida. 💖" target="_blank"><img src="images/footerlogo/whats.png" alt="whatsapp"></a></li>
 				<li><a href="https://www.instagram.com/imperiofrancisca/?theme=dark" target="_blank"><img src="images/footerlogo/insta.png" alt="instagram"></a></li>
 				<li><a href="#"><img src="images/footerlogo/face.png" alt="facebook"></a></li>
@@ -110,13 +110,13 @@
 		<!-- BARRA DE MENU DA ESQUERDA -->
 		<div class="left_menuBar" style="display: none;">
 			<div id="menuHeader">
-				<!-- TITULO DA BARRA DE NAVEGAÇÃO -->
+				<!-- TITULO DA BARRA DE NAVEGAÇÃO ESQUERDA -->
 				<h1>Navegue por categoria</h1>
-				<!-- bOTÃO DE FECHAR BARRA DE NAVEGAÇÃO -->
+				<!-- BOTÃO DE FECHAR BARRA DE NAVEGAÇÃO ESQUERDA -->
 				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="fecharMenu"></span>
 			</div>
 			<ul>
-				<!-- ITENS DA BARRA DE NAVEGAÇÃO -->
+				<!-- ITENS DA BARRA DE NAVEGAÇÃO ESQUERDA -->
 				<li  class="menuItens" onclick="loadProduct('none'),clickthrow(0)">○ Mostrar todos</li>
 				<li class="menuTitles"><img src="images/menuicons/roupas.png" alt="roupas">Roupas</li>
 				<li class="menuItens" onclick="loadProduct('Camisa'),clickthrow(0)">• Camisas</li>
@@ -129,13 +129,18 @@
 				<li class="menuItens" onclick="loadProduct('Brincos'),clickthrow(0)">• Brincos</li>
 			</ul>
 		</div>
+		<!-- CARRINHO DE COMPRAS -->
 		<div class="right_cartShop">
 			<div id="cartHeader">
 				<span onclick="clickthrow(0)"><img src="images/icons/betterclose.png" alt="closeMenu"></span>
 				<h1>Carrinho de compras</h1>
 			</div>
-			<p>Você ainda não tem nenhum item em seu carrinho</p>
+			<div class="cartBody">
+				<div class="cartList">Você ainda não tem nenhum item em seu carrinho</div>
+				<div class="cartTotal"> Teste total <br> 99,90 TESTE TOTAL <br>TOTAL TESTE TOTAL</div>
+			</div>
 		</div>
+		<!-- CONECTE-SE -->
 		<div class="center_connectPlus">
 			<div id="centerHeart">
 				<h1>Entre em contato</h1>
@@ -146,7 +151,7 @@
 				<a class="heartInsta" href="https://ig.me/m/imperiofrancisca/" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Instagram</a>
 			</div>
 		</div>
-
+		<!-- PQ TEM 2 CENTER CONNECTPLUS???
 		<div class="center_connectPlus">
 			<div id="centerHeart">
 				<h1>Entre em contato</h1>
@@ -156,7 +161,7 @@
 				<a class="heartWhats" href="https://api.whatsapp.com/send/?phone=19997597681&text=🦒Olá, Império Francisca! Gostaria de entrar em contato para tirar uma dúvida. 💖" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Whatsapp</a>
 				<a class="heartInsta" href="https://ig.me/m/imperiofrancisca/" target="_blank"><img src="images/icons/scart.png" alt="icone carrinho">Chame no Instagram</a>
 			</div>
-		</div>
+		</div> -->
 	
 	<!-- SCRIPT GERAL DA PAGINA -->
 	<script src="script/script.js">

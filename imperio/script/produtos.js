@@ -1,12 +1,11 @@
 //window.document.getElementById('showProduct').style="display:none;"
-var unitMonetaria = "R$ "
-var sliderPage = window.document.getElementById('mainSlider')
+var unitMonetaria = "R$ ";
+var sliderPage = window.document.getElementById('mainSlider');
 var filtro = "none";
-var cont = 0
-var antigoval = 0
-var atualval = 0
+var cont = 0;
+var antigoval = 0;
+var atualval = 0;
 var produtosLoja = [
-
     //---------------------------------------------
     {indice:0, alt:'Camiseta',
     img:'produtos/roupas_Teste/blusa_exemplo.png',
@@ -71,26 +70,26 @@ function startIndice(){// ATRIBUI O INDICE DE CADA ITEM AUTOMATICAMENTE
 
 function cleanProduct(){// REMOVE TODOS OS PRODUTOS DO SITE PARA ATUALIZAÇÃO
     window.document.querySelector(".shopItens").innerHTML="";cont=0;
+    showProduct(-1);
 }
 function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁRIO
-    filtro=filtroSelecionado // LINHA DISPENSAVEL?
+    filtro=filtroSelecionado; // LINHA DISPENSAVEL?
     cleanProduct();
     for(c in produtosLoja){
         if(filtro==="none"){
             cont++
-            window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'>${unitMonetaria+produtosLoja[c].valorAtual}</p></div></div>`
-
-            window.document.querySelector("#msgIntro").innerHTML="Seja bem vindo!"
+            window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'>${unitMonetaria+produtosLoja[c].valorAtual}</p></div></div>`;
+            window.document.querySelector("#msgIntro").innerHTML="Seja bem vindo!";
         }else if(produtosLoja[c].categoria.indexOf(filtro)!=-1){
-                cont++
-                window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'>${unitMonetaria+produtosLoja[c].valorAtual}</p></div></div>`
+                cont++;
+                window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'>${unitMonetaria+produtosLoja[c].valorAtual}</p></div></div>`;
 
-                window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`
+                window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`;
         }
     }
     if(cont===0){
-        window.document.querySelector(".shopItens").innerHTML="<img src='images/icons/saderror.png' alt='nãoencontrado' style='width:48px;padding-top: 100px;'>"
-        window.document.querySelector("#msgIntro").innerHTML=`No momento, estamos sem itens da categoria '${filtro}' <a href='#' onclick='loadProduct("none")' style="padding:2px;">remover filtros</a>.`
+        window.document.querySelector(".shopItens").innerHTML="<img src='images/icons/saderror.png' alt='nãoencontrado' style='width:48px;padding-top: 100px;'>";
+        window.document.querySelector("#msgIntro").innerHTML=`No momento, estamos sem itens da categoria '${filtro}' <a href='#' onclick='loadProduct("none")' style="padding:2px;">remover filtros</a>.`;
     }/*else{
         window.document.querySelector("#shopContainer").innerHTML+="Encontrado "+cont+" Produtos da categoria ' "+filtro+" '."
     }*/
@@ -98,40 +97,40 @@ function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁ
 
 function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
     if(showIs === -1){
-        window.document.getElementById('showProduct').style="display:none;"
-        window.document.querySelector("#mainSlider").style="display: block;"
+        window.document.getElementById('showProduct').style="display:none;";
+        window.document.querySelector("#mainSlider").style="display: block;";
     }else{
         //Coletando preço para atualização
-        antigoval = Number.parseFloat(produtosLoja[showIs].valorAntigo)
-        atualval = Number.parseFloat(produtosLoja[showIs].valorAtual)
+        antigoval = Number.parseFloat(produtosLoja[showIs].valorAntigo);
+        atualval = Number.parseFloat(produtosLoja[showIs].valorAtual);
         //Esconde Slider para mostrar o produto
-        window.document.querySelector("#mainSlider").style="display: none;"
+        window.document.querySelector("#mainSlider").style="display: none;";
         //Rola pagina da tela até o topo
         window.scrollTo(0,0);
         //Altera a mensagem para Veja mais
-        window.document.querySelector("#msgIntro").innerHTML="Veja mais"
+        window.document.querySelector("#msgIntro").innerHTML="Veja mais";
         //Habilita visualização do mostruário
-        window.document.getElementById('showProduct').style="display:grid;"
+        window.document.getElementById('showProduct').style="display:grid;";
         //Atualiza PESO, TAMANHO, MATERIAL e INFORMAÇÃO
-        window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`
+        window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`;
         //Verificando se terá valor anterior Para assim atualizar corretamente
         if(antigoval>0){
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`;
         }else{// /\ Valor anterior > 0 || \/ Valor anterior < 0
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice">R$ ${produtosLoja[showIs].valorAtual}</strong>`;
         }
         //Atualiza IMAGEM PRINCIPAL produto selecionado
-        window.document.querySelector(".pshowMainimage").setAttribute('src',produtosLoja[showIs].img)
+        window.document.querySelector(".pshowMainimage").setAttribute('src',produtosLoja[showIs].img);
         //Atualiza IMAGENS SEGUNDARIAS prod.selecionado
-        window.document.querySelector(".SecimgA").setAttribute('src',produtosLoja[showIs].img)
-        window.document.querySelector(".SecimgB").setAttribute('src',produtosLoja[showIs].img)
-        window.document.querySelector(".SecimgC").setAttribute('src',produtosLoja[showIs].img)
+        window.document.querySelector(".SecimgA").setAttribute('src',produtosLoja[showIs].img);
+        window.document.querySelector(".SecimgB").setAttribute('src',produtosLoja[showIs].img);
+        window.document.querySelector(".SecimgC").setAttribute('src',produtosLoja[showIs].img);
         //Atualiza DESCONTO PORCENTAGEM produto selecionado
         if(antigoval > atualval){
-            window.document.querySelector(".pshowPromo").style="display: absolute;"
-            window.document.querySelector(".pshowPromo").innerHTML=`${Math.round(((100/antigoval)*atualval)-100)}% OFF`
+            window.document.querySelector(".pshowPromo").style="display: absolute;";
+            window.document.querySelector(".pshowPromo").innerHTML=`${Math.round(((100/antigoval)*atualval)-100)}% OFF`;
         }else{// /\ Calcula e mostra Desconto em % na foto || \/ Esconde desconto
-            window.document.querySelector(".pshowPromo").style="display: none;"
+            window.document.querySelector(".pshowPromo").style="display: none;";
         }
     }
 }
