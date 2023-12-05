@@ -2,7 +2,7 @@
 var unitMonetaria = "R$ ";
 var sliderPage = window.document.getElementById('mainSlider');
 var filtro = "none";
-var cont = 0;
+var cont = 0; memory = 0;
 var antigoval = 0;
 var atualval = 0;
 var mostruarioIndice = -1;
@@ -31,7 +31,7 @@ var produtosLoja = [
     img:'produtos/roupas_Teste/conjunto_feminino_exemplo.png',
     nome:'Conjunto feminino de exemplo',
     info:'Conjunto de peças feminina para o dia a dia',
-    peso:'378g',cor:'verde',tamanho:'M',material:'algodão e poliester',
+    peso:'378g',cor:'verde',tamanho:'M',material:'algodão e poliester',textura:'verde',
     valorAntigo:'89,90',
     valorAtual:'74,49',
     categoria:['Camisa','Vestido']}
@@ -62,6 +62,15 @@ var produtosLoja = [
     valorAntigo:'569,35',
     valorAtual:'378,89',
     categoria:['Vestido']}
+    ,//---------------------------------------------
+    {indice:0,qnt:0,alt:'Vestido',
+    img:'produtos/roupas_Teste/vestido_exemplo.png',
+    nome:'Vestido social de exemplo',
+    info:'Vestido social embedado em joias para eventos sociais',
+    peso:'679g',cor:'rosa',tamanho:'M',material:'nanofibras e zircônio',
+    valorAntigo:'569,35',
+    valorAtual:'378,89',
+    categoria:['Vestido']}
 
 ]//||------||------|| FIM DOS PRODUTOS DA LOJA ||------||------||
 
@@ -69,7 +78,6 @@ function startIndice(){// ATRIBUI O INDICE DE CADA ITEM AUTOMATICAMENTE
     for(c in produtosLoja){
         produtosLoja[c].indice=Number(c)}
 }startIndice()
-
 function cleanProduct(){// REMOVE TODOS OS PRODUTOS DO SITE PARA ATUALIZAÇÃO
     window.document.querySelector(".shopItens").innerHTML="";cont=0;
     showProduct(-1);
@@ -141,13 +149,27 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
 }
 
 function addCart(sel){
+    cont = 0;
     window.document.querySelector(".cartList").innerHTML="";
-    if(sel===1){carrinhoLoja.push(produtosLoja[mostruarioIndice]);
-    produtosLoja[mostruarioIndice].qnt = 1;
+    if(sel===1){
+        for(c in carrinhoLoja){
+            if(carrinhoLoja[c].indice===produtosLoja[mostruarioIndice].indice){
+                cont++;memory=c;
+            }
+        }
+        if(cont>0){
+            carrinhoLoja[memory].qnt+=1;
+        }else{
+            carrinhoLoja.push(produtosLoja[mostruarioIndice]);
+            produtosLoja[mostruarioIndice].qnt = 1;
+        }
     }
+    memory=0
     for(c in carrinhoLoja){
-        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">1</div><div class="cartECless" onclick="changeCart(${c},1)">-</div><img class="cartECjunk" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div> pos: ${c} ind:${carrinhoLoja[c].indice}</div>`
+        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">${carrinhoLoja[c].qnt}</div><div class="cartECless" onclick="changeCart(${c},1)">-</div><img class="cartECjunk" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
+        memory+=(Number.parseFloat(carrinhoLoja[c].valorAtual)*carrinhoLoja[c].qnt)
     }
+    window.document.querySelector(".cartResume").innerHTML=`Total: ${unitMonetaria+memory} + FRETE`
 }
 
 function changeCart(selected, action){
@@ -156,5 +178,19 @@ function changeCart(selected, action){
             carrinhoLoja.splice(selected, 1);
             addCart(0);
             break;
+        case 1:
+            carrinhoLoja[selected].qnt-=1
+            if(carrinhoLoja[selected].qnt<1){
+                carrinhoLoja.splice(selected, 1);
+            }
+            addCart(0);
+            break;
+        case 2:
+            carrinhoLoja[selected].qnt+=1
+            addCart(0);
+            break;
+    }
+    if(carrinhoLoja.length<1){
+        window.document.querySelector(".cartList").innerHTML="Você ainda não tem nenhum item em seu carrinho"
     }
 }

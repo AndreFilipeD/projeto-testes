@@ -599,9 +599,14 @@ footer{ /* FOOTER */
 	grid-template-rows: 2fr 1fr;
 	grid-template-areas: "resumetotal" "sendbutton";
 }
+.cartResume{
+	grid-area: resumetotal;
+}
 .cartSendButton{
+	color: black;
 	border-radius: 20px;
 	text-align: center;
+	text-decoration: none;
 	padding: 15px;
 	margin: 15px;
 	background-color: var(--whatsColor);
@@ -619,12 +624,18 @@ footer{ /* FOOTER */
 	width: 90%;
 	height: fit-content;
 	border: 1px solid var(--verylightgray);
+	outline: 0px double var(--mainbackcolor);
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.137);
 	padding: 10px;
 	display: grid;
 	gap: 5px;
 	grid-template-columns: 1.5fr 3fr;
 	grid-template-rows: 1.5fr auto-fill;
+	transition: .4s;
+}
+.cartElement:hover{
+	outline: 3px solid var(--mainbackcolor);
+	transition: .4s;
 }
 .cartElementImg{
 	width: 100%;
@@ -638,6 +649,7 @@ footer{ /* FOOTER */
 	text-align: start;
 }
 .cartElementInfo{
+	text-align: start;
 	font-size: .7em;
 	grid-column: 1;
 	grid-row: 2;
@@ -661,6 +673,8 @@ footer{ /* FOOTER */
 
 	outline: 1px solid gray;
 	box-shadow: 2px 2px 5px #00000020;
+
+	transition: .5s;
 }
 .cartECless{
 	font-family: monospace;
@@ -671,8 +685,9 @@ footer{ /* FOOTER */
 	border-radius: 30px;
 
 	outline: 1px solid gray;
-	box-shadow: 2px 2px 5px #00000020;
+	box-shadow: 1px 1px 5px #00000020;
 
+	transition: .5s;
 }
 .cartECless:hover, .cartECplus:hover{
 	outline: 3px solid var(--mainbackcolor);
