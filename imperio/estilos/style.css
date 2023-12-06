@@ -54,6 +54,26 @@ header{ /* HEADER */
    	background-color: var(--mainbackcolor);
    	width: 100%;
 }
+.nselm{/* Classe de bloqueador de seleção para elementos específicos*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;}
+/*
+body::-webkit-scrollbar {
+	width: 12px;              
+}
+body::-webkit-scrollbar-track {
+	background: white;     
+}
+body::-webkit-scrollbar-thumb{
+	background-color: var(--mainbackcolor);
+	border-radius: 20px;
+	border: 3px solid white;
+}*/
+
 #rightHeader{
 	width: 100%;
 	display: flex;
@@ -588,6 +608,18 @@ footer{ /* FOOTER */
 	grid-area: cartlist;
 	text-align: center;
 	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.cartList::-webkit-scrollbar {
+	width: 12px;               /* width of the entire scrollbar */
+}
+.cartList::-webkit-scrollbar-track {
+	background: white;        /* color of the tracking area */
+}
+.cartList::-webkit-scrollbar-thumb {
+	background-color: var(--mainbackcolor);    /* color of the scroll thumb */
+	border-radius: 20px;       /* roundness of the scroll thumb */
+	border: 3px solid white;  /* creates padding around scroll thumb */
 }
 .cartListnone{
 	font-family: var(--usualFont);
@@ -632,7 +664,7 @@ footer{ /* FOOTER */
 .cartElement{
 	border-radius: 20px;
 	margin: 15px;
-	width: 90%;
+	width: 93%;
 	height: fit-content;
 	border: 1px solid var(--verylightgray);
 	outline: 0px double var(--mainbackcolor);

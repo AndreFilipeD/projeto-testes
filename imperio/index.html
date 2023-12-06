@@ -12,22 +12,22 @@
 <body>
 	<!-- HTML BODY START -->
 	<header>
-		<div id="leftHeader"><!-- CABEÇALHO DA ESQUERDA -->
+		<div id="leftHeader" class="nselm"><!-- CABEÇALHO DA ESQUERDA -->
 			<img src="images/icons/menu.png" alt="Menu" onclick="clickthrow(1)">
 		</div>
-		<div id="logo" onclick="clickthrow(0), showProduct(-1)"><!-- LOGO CENTRAL RENDERIZADO EM CSS -->
+		<div id="logo" class="nselm" onclick="clickthrow(0), showProduct(-1)"><!-- LOGO CENTRAL RENDERIZADO EM CSS -->
 			<img id="logoImage" src="images/imperiologo.svg" alt="logo imperio francisca">
 			<h1 id="mainTitle">IMPÉRIO</h1>
 			<h1 id="secTitle">Francisca</h1>
 		</div>
-		<div id="rightHeader"><!-- CABEÇALHO DA DIREITA -->
+		<div id="rightHeader" class="nselm"><!-- CABEÇALHO DA DIREITA -->
 			<img src="images/icons/heart_plus.png" alt="Heart Plus" onclick="clickthrow(3)">
 			<img src="images/icons/shop_bag.png" alt="Shopping Bag" onclick="clickthrow(2)">
 		</div>
 	</header>
 	<main>
 		<!-- IFRAME QUE CARREGA O SLIDER -->
-		<iframe id="mainSlider" name="mslide" src="slides/slide.html" frameborder="0"></iframe>
+		<iframe id="mainSlider" class="nselm" name="mslide" src="slides/slide.html" frameborder="0"></iframe>
 		<!-- IFRAME QUE CARREGA O SLIDER -->
 		<!-- ESPAÇO DE APRESENTAÇÃO DE PRODUTO -->
 		<aside id="showProduct"><a href="#" class="returnLink" onclick="showProduct(-1)">Voltar ao inicio</a>
@@ -65,7 +65,7 @@
 		</aside>
 		<!-- ESPAÇO DE APRESENTAÇÃO DE PRODUTO -->
 		<!-- MENSAGEM SAUDAÇÃO + PESQUISA DE FILTRO -->
-		<aside id="msgIntro"></aside>
+		<aside id="msgIntro" class="nselm"></aside>
 		<!-- MENSAGEM SAUDAÇÃO + PESQUISA DE FILTRO -->
 		<div id="shopContainer">
 			<div class="shopItens">
@@ -75,7 +75,7 @@
 			</div>
 		</div>
 	</main>
-	<footer>
+	<footer class="nselm">
 		<!-- FOOTERBLOCK PERMANEÇA CONECTADO -->
 		<div class="footerblock">
 			<h1>Permaneça conectado</h1>
@@ -139,7 +139,7 @@
 				<div class="cartList"><div class="cartListnone">Você ainda não tem nenhum item em seu carrinho</div><img src="images/icons/saderror.png" alt="nonecart"></div>
 				<div class="cartTotal">
 					<div class="cartResume"><strong class="smallpricetext">Você possui 0 item(ns) em seu carrinho.</strong></div>
-					<a class="cartSendButton" href="https://api.whatsapp.com/send/?phone=19997597681&text=🦒Olá, Império Francisca! Gostaria de entrar em contato para tirar uma dúvida. 💖" target="_blank">Enviar no Whatsapp</a>
+					<a class="cartSendButton nselm" href="https://api.whatsapp.com/send/?phone=19997597681&text=🦒Olá, Império Francisca! Gostaria de entrar em contato para tirar uma dúvida. 💖" target="_blank">Enviar no Whatsapp</a>
 				</div>
 			</div>
 		</div>

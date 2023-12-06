@@ -86,7 +86,7 @@ function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁ
     filtro=filtroSelecionado; // LINHA DISPENSAVEL?
     cleanProduct();
     for(c in produtosLoja){
-        if(filtro==="none"){
+        if(filtro==="none"){//se não houver nenhum filtro
             cont++
             window.document.querySelector(".shopItens").innerHTML+=`
             <div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"> 
@@ -107,7 +107,7 @@ function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁ
             </div>
             </div>`
             window.document.querySelector("#msgIntro").innerHTML="Seja bem vindo!";
-        }else if(produtosLoja[c].categoria.indexOf(filtro)!=-1){
+        }else if(produtosLoja[c].categoria.indexOf(filtro)!=-1){//caso selecione algum filtro
                 cont++;
                 window.document.querySelector(".shopItens").innerHTML+=`
                 <div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})">
@@ -131,12 +131,10 @@ function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁ
                 window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`
         }
     }
-    if(cont===0){
+    if(cont===0){// Caso não encontre nenhum item do filtro selecionado
         window.document.querySelector(".shopItens").innerHTML="<img src='images/icons/saderror.png' alt='nãoencontrado' style='width:48px;padding-top: 100px;'>";
         window.document.querySelector("#msgIntro").innerHTML=`No momento, estamos sem itens da categoria '${filtro}' <a href='#' onclick='loadProduct("none")' style="padding:2px;">remover filtros</a>.`;
-    }/*else{
-        window.document.querySelector("#shopContainer").innerHTML+="Encontrado "+cont+" Produtos da categoria ' "+filtro+" '."
-    }*/
+    }
 }loadProduct("none");// padrão "none" Sem filtro
 
 function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
@@ -160,7 +158,7 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         window.document.getElementById('showProduct').style="display:grid;";
         //Atualiza PESO, COR, TAMANHO, MATERIAL e INFORMAÇÃO
         window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Cor: </strong>${produtosLoja[showIs].cor}<strong><br>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`;
-        //Verificando se terá valor anterior Para assim atualizar corretamente
+        //Verificando se terá valorAntigo, Para assim atualizar corretamente
         if(antigoval>0){
         window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">de: ${unitMonetaria+produtosLoja[showIs].valorAntigo.toFixed(2).replace('.',',')}</strong><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual.toFixed(2).replace('.',',')}<strong class="smallpricetext"> à vista</strong></strong>`;
         }else{// /\ Valor anterior > 0 || \/ Valor anterior =< 0
@@ -201,7 +199,7 @@ function addCart(sel){// ADICIONA OU ACRESCENTA E ATUALIZA CARRINHO DE COMPRAS
     memory=0
     memoryB=0
     for(c in carrinhoLoja){
-        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual.toFixed(2).replace('.',',')}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">${carrinhoLoja[c].qnt}</div><div class="cartECless" onclick="changeCart(${c},1)">-</div><img class="cartECjunk" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
+        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual.toFixed(2).replace('.',',')}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus nselm" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">${carrinhoLoja[c].qnt}</div><div class="cartECless nselm" onclick="changeCart(${c},1)">-</div><img class="cartECjunk nselm" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
         memory+=(carrinhoLoja[c].valorAtual*carrinhoLoja[c].qnt)
         memoryB+=(carrinhoLoja[c].qnt)
     }
