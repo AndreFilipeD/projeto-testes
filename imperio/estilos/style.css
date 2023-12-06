@@ -642,11 +642,11 @@ footer{ /* FOOTER */
 	gap: 5px;
 	grid-template-columns: 1.5fr 3fr;
 	grid-template-rows: 1.5fr auto-fill;
-	transition: .4s;
+	transition: .1s;
 }
 .cartElement:hover{
 	outline: 3px solid var(--mainbackcolor);
-	transition: .4s;
+	transition: .1s;
 }
 .cartElementImg{
 	width: 100%;
@@ -685,7 +685,7 @@ footer{ /* FOOTER */
 	outline: 1px solid gray;
 	box-shadow: 2px 2px 5px #00000020;
 
-	transition: .5s;
+	transition: .1s;
 }
 .cartECless{
 	font-family: monospace;
@@ -698,11 +698,11 @@ footer{ /* FOOTER */
 	outline: 1px solid gray;
 	box-shadow: 1px 1px 5px #00000020;
 
-	transition: .5s;
+	transition: .1s;
 }
 .cartECless:hover, .cartECplus:hover{
 	outline: 3px solid var(--mainbackcolor);
-	transition: .4s;
+	transition: .1s;
 	cursor: pointer;
 }
 .cartQntValue{

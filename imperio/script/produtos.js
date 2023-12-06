@@ -9,63 +9,63 @@ var mostruarioIndice = -1;
 var carrinhoLoja = []
 var produtosLoja = [
     //---------------------------------------------
-    {indice:0,qnt:0,alt:'Camiseta',
+    {nome:'Blusa de exemplo',
+    indice:0,qnt:0,alt:'Camiseta',
     img:'produtos/roupas_Teste/blusa_exemplo.png',
-    nome:'Blusa de exemplo',
     info:'Blusa branca padrão feita de algodão',
     peso:'198g',cor:'azul',tamanho:'M',material:'algodão',
     valorAntigo:0,
     valorAtual:39.99,
     categoria:['Camisa']}
     ,//---------------------------------------------
-    {indice:0,qnt:0,alt:'Conjunto',
+    {nome:'Super conjunto social de casal para festas de exemplo',
+    indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_casal_exemplo.png',
-    nome:'Super conjunto social de casal para festas de exemplo',
     info:'Conjunto social de luxo para eventos de alto nivel',
     peso:'853g',cor:'vermelho',tamanho:'M, P, G',material:'algodão, poliester e nanofibras',
     valorAntigo:599.90,
     valorAtual:129.90,
     categoria:['Camisa','Vestido','Calça']}
     ,//---------------------------------------------
-    {indice:0,qnt:0,alt:'Conjunto',
+    {nome:'Conjunto feminino de exemplo',
+    indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_feminino_exemplo.png',
-    nome:'Conjunto feminino de exemplo',
     info:'Conjunto de peças feminina para o dia a dia',
-    peso:'378g',cor:'verde',tamanho:'M',material:'algodão e poliester',textura:'verde',
+    peso:'378g',cor:'verde',tamanho:'M',material:'algodão e poliester',
     valorAntigo:89.90,
     valorAtual:74.49,
     categoria:['Camisa','Vestido']}
     ,//---------------------------------------------
-    {indice:0,qnt:0,alt:'Conjunto',
+    {nome:'Conjunto masculino de exemplo',
+    indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_masculino_exemplo.png',
-    nome:'Conjunto masculino de exemplo',
     info:'Conjunto masculino leve e respirável para a prática de esporte',
     peso:'328g',cor:'branco',tamanho:'M',material:'Poliester',
     valorAntigo:99.90,
     valorAtual:64.90,
     categoria:['Camisa','Calça']}
     ,//---------------------------------------------
-    {indice:0,qnt:0,alt:'Conjunto',
+    {nome:'Conjunto unisex de exemplo',
+    indice:0,qnt:0,alt:'Conjunto',
     img:'produtos/roupas_Teste/conjunto_unisex_exemplo.png',
-    nome:'Conjunto unisex de exemplo',
     info:'Camiseta branca e calça jeans unisex padrão para uso geral',
     peso:'521g',cor:'preto e azul',tamanho:'M',material:'algodão e Jeans',
     valorAntigo:74.99,
     valorAtual:69.90,
     categoria:['Camisa','Calça']}
     ,//---------------------------------------------
-    {indice:0,qnt:0,alt:'Vestido',
+    {nome:'Vestido luxuoso de exemplo',
+    indice:0,qnt:0,alt:'Vestido',
     img:'produtos/roupas_Teste/vestido_exemplo.png',
-    nome:'Vestido luxuoso de exemplo',
     info:'Vestido estilizado e embedado em joias para eventos de alto nivel',
     peso:'679g',cor:'rosa',tamanho:'M',material:'nanofibras e zircônio',
     valorAntigo:569.35,
     valorAtual:378.89,
     categoria:['Vestido']}
     ,//---------------------------------------------
-    {indice:0,qnt:0,alt:'Vestido',
+    {nome:'Vestido casual de exemplo',
+    indice:0,qnt:0,alt:'Vestido',
     img:'produtos/roupas_Teste/vestido_exemplo.png',
-    nome:'Vestido casual de exemplo',
     info:'Vestido casual para o dia a dia',
     peso:'443g',cor:'violeta',tamanho:'M',material:'algodão',
     valorAntigo:49.90,
@@ -211,7 +211,7 @@ function addCart(sel){// ADICIONA OU ACRESCENTA E ATUALIZA CARRINHO DE COMPRAS
       })}</strong> <strong>+ FRETE</strong>`;
 }
 
-function changeCart(selected, action){
+function changeCart(selected, action){// CONTROLA QUANTIDADE POR PRODUTO E NOTIFICA SITUAÇÃO
     switch(action){
         case 0:
             carrinhoLoja.splice(selected, 1);
