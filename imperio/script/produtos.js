@@ -2,7 +2,7 @@
 var unitMonetaria = "R$ ";
 var sliderPage = window.document.getElementById('mainSlider');
 var filtro = "none";
-var cont = 0; memory = 0;
+var cont = 0; memory = 0; memoryB = 0;
 var antigoval = 0;
 var atualval = 0;
 var mostruarioIndice = -1;
@@ -14,8 +14,8 @@ var produtosLoja = [
     nome:'Blusa de exemplo',
     info:'Blusa branca padrão feita de algodão',
     peso:'198g',cor:'azul',tamanho:'M',material:'algodão',
-    valorAntigo:'',
-    valorAtual:'39,99',
+    valorAntigo:0,
+    valorAtual:39.99,
     categoria:['Camisa']}
     ,//---------------------------------------------
     {indice:0,qnt:0,alt:'Conjunto',
@@ -23,8 +23,8 @@ var produtosLoja = [
     nome:'Super conjunto social de casal para festas de exemplo',
     info:'Conjunto social de luxo para eventos de alto nivel',
     peso:'853g',cor:'vermelho',tamanho:'M, P, G',material:'algodão, poliester e nanofibras',
-    valorAntigo:'599,90',
-    valorAtual:'129,90',
+    valorAntigo:599.90,
+    valorAtual:129.90,
     categoria:['Camisa','Vestido','Calça']}
     ,//---------------------------------------------
     {indice:0,qnt:0,alt:'Conjunto',
@@ -32,8 +32,8 @@ var produtosLoja = [
     nome:'Conjunto feminino de exemplo',
     info:'Conjunto de peças feminina para o dia a dia',
     peso:'378g',cor:'verde',tamanho:'M',material:'algodão e poliester',textura:'verde',
-    valorAntigo:'89,90',
-    valorAtual:'74,49',
+    valorAntigo:89.90,
+    valorAtual:74.49,
     categoria:['Camisa','Vestido']}
     ,//---------------------------------------------
     {indice:0,qnt:0,alt:'Conjunto',
@@ -41,8 +41,8 @@ var produtosLoja = [
     nome:'Conjunto masculino de exemplo',
     info:'Conjunto masculino leve e respirável para a prática de esporte',
     peso:'328g',cor:'branco',tamanho:'M',material:'Poliester',
-    valorAntigo:'99,90',
-    valorAtual:'64,90',
+    valorAntigo:99.90,
+    valorAtual:64.90,
     categoria:['Camisa','Calça']}
     ,//---------------------------------------------
     {indice:0,qnt:0,alt:'Conjunto',
@@ -50,26 +50,26 @@ var produtosLoja = [
     nome:'Conjunto unisex de exemplo',
     info:'Camiseta branca e calça jeans unisex padrão para uso geral',
     peso:'521g',cor:'preto e azul',tamanho:'M',material:'algodão e Jeans',
-    valorAntigo:'74,99',
-    valorAtual:'69,90',
+    valorAntigo:74.99,
+    valorAtual:69.90,
     categoria:['Camisa','Calça']}
     ,//---------------------------------------------
     {indice:0,qnt:0,alt:'Vestido',
     img:'produtos/roupas_Teste/vestido_exemplo.png',
-    nome:'Vestido social de exemplo',
-    info:'Vestido social embedado em joias para eventos sociais',
+    nome:'Vestido luxuoso de exemplo',
+    info:'Vestido estilizado e embedado em joias para eventos de alto nivel',
     peso:'679g',cor:'rosa',tamanho:'M',material:'nanofibras e zircônio',
-    valorAntigo:'569,35',
-    valorAtual:'378,89',
+    valorAntigo:569.35,
+    valorAtual:378.89,
     categoria:['Vestido']}
     ,//---------------------------------------------
     {indice:0,qnt:0,alt:'Vestido',
     img:'produtos/roupas_Teste/vestido_exemplo.png',
-    nome:'Vestido social de exemplo',
-    info:'Vestido social embedado em joias para eventos sociais',
-    peso:'679g',cor:'rosa',tamanho:'M',material:'nanofibras e zircônio',
-    valorAntigo:'569,35',
-    valorAtual:'378,89',
+    nome:'Vestido casual de exemplo',
+    info:'Vestido casual para o dia a dia',
+    peso:'443g',cor:'violeta',tamanho:'M',material:'algodão',
+    valorAntigo:49.90,
+    valorAtual:45.90,
     categoria:['Vestido']}
 
 ]//||------||------|| FIM DOS PRODUTOS DA LOJA ||------||------||
@@ -88,13 +88,47 @@ function loadProduct(filtroSelecionado){// CARREGA E FILTRA PRODUTOS SE NECESSÁ
     for(c in produtosLoja){
         if(filtro==="none"){
             cont++
-            window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? "de: "+ unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'><strong class="smallpricetext">por </strong>${unitMonetaria+produtosLoja[c].valorAtual} <strong class="smallpricetext"> à vista</strong></p></div></div>`;
+            window.document.querySelector(".shopItens").innerHTML+=`
+            <div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"> 
+            <img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}">
+            <div class='descProduto'>
+            <h1 class='nomeProduto'>
+            ${produtosLoja[c].nome}
+            </h1>
+            <p class='antigoProduto'>
+            ${produtosLoja[c].valorAntigo > 0 ? "de: "+ unitMonetaria+produtosLoja[c].valorAntigo.toFixed(2).replace('.',',') : ""}
+            </p>
+            <p class='valorProduto'>
+            <strong class="smallpricetext">por 
+            </strong>${unitMonetaria+produtosLoja[c].valorAtual.toFixed(2).replace('.',',')} 
+            <strong class="smallpricetext"> à vista
+            </strong>
+            </p>
+            </div>
+            </div>`
             window.document.querySelector("#msgIntro").innerHTML="Seja bem vindo!";
         }else if(produtosLoja[c].categoria.indexOf(filtro)!=-1){
                 cont++;
-                window.document.querySelector(".shopItens").innerHTML+=`<div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})"><img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}"><div class='descProduto'><h1 class='nomeProduto'>${produtosLoja[c].nome}</h1><p class='antigoProduto'>${Number.parseFloat(produtosLoja[c].valorAntigo) > 0 ? "de: "+unitMonetaria+produtosLoja[c].valorAntigo : ""}</p><p class='valorProduto'><strong class="smallpricetext">por </strong>${unitMonetaria+produtosLoja[c].valorAtual} <strong class="smallpricetext"> à vista</strong></p></div></div>`;
+                window.document.querySelector(".shopItens").innerHTML+=`
+                <div class='shopProduct' onclick="showProduct(${produtosLoja[c].indice})">
+                <img src="${produtosLoja[c].img}" alt="${produtosLoja[c].alt}">
+                <div class='descProduto'>
+                <h1 class='nomeProduto'>
+                ${produtosLoja[c].nome}
+                </h1>
+                <p class='antigoProduto'>
+                ${produtosLoja[c].valorAntigo > 0 ? "de: "+unitMonetaria+produtosLoja[c].valorAntigo.toFixed(2).replace('.',',') : ""}
+                </p>
+                <p class='valorProduto'>
+                <strong class="smallpricetext">por 
+                </strong>${unitMonetaria+produtosLoja[c].valorAtual.toFixed(2).replace('.',',')} 
+                <strong class="smallpricetext"> à vista
+                </strong>
+                </p>
+                </div>
+                </div>`
 
-                window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`;
+                window.document.querySelector("#msgIntro").innerHTML=`- Foram encontrado(s) ${cont} item(ns) da categoria '${filtro}'. <a href='#' onclick='loadProduct("none")'>remover filtros</a>`
         }
     }
     if(cont===0){
@@ -114,8 +148,8 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         //Coletando Indice de Mostruário atual
         mostruarioIndice = showIs;
         //Coletando preço para atualização
-        antigoval = Number.parseFloat(produtosLoja[showIs].valorAntigo);
-        atualval = Number.parseFloat(produtosLoja[showIs].valorAtual);
+        antigoval = produtosLoja[showIs].valorAntigo;
+        atualval = produtosLoja[showIs].valorAtual;
         //Esconde Slider para mostrar o produto
         window.document.querySelector("#mainSlider").style="display: none;";
         //Rola pagina da tela até o topo
@@ -128,9 +162,9 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
         window.document.querySelector(".pshowDef").innerHTML=`<strong>Peso:</strong> ${produtosLoja[showIs].peso}<br><strong>Cor: </strong>${produtosLoja[showIs].cor}<strong><br>Tamanho:</strong> ${produtosLoja[showIs].tamanho}<br><strong>Material:</strong> ${produtosLoja[showIs].material}<br><br><hr><strong>Descrição do produto<br></strong>${produtosLoja[showIs].info}`;
         //Verificando se terá valor anterior Para assim atualizar corretamente
         if(antigoval>0){
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">de: R$ ${produtosLoja[showIs].valorAntigo}</strong><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual}<strong class="smallpricetext"> à vista</strong></strong>`;
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><strong class="olderPrice">de: ${unitMonetaria+produtosLoja[showIs].valorAntigo.toFixed(2).replace('.',',')}</strong><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual.toFixed(2).replace('.',',')}<strong class="smallpricetext"> à vista</strong></strong>`;
         }else{// /\ Valor anterior > 0 || \/ Valor anterior =< 0
-        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual}<strong class="smallpricetext"> à vista</strong></strong>`;
+        window.document.querySelector(".pshowCartadd").innerHTML=`<h2 class="pshowName">${produtosLoja[showIs].nome}</h2><br><strong class="actualPrice"><strong class="smallpricetext">por </strong>R$ ${produtosLoja[showIs].valorAtual.toFixed(2).replace('.',',')}<strong class="smallpricetext"> à vista</strong></strong>`;
         }
         //Atualiza IMAGEM PRINCIPAL produto selecionado
         window.document.querySelector(".pshowMainimage").setAttribute('src',produtosLoja[showIs].img);
@@ -148,7 +182,7 @@ function showProduct(showIs){// APRESENTA PRODUTO SELECIONADO NO MOSTRUÁRIO
     }
 }
 
-function addCart(sel){
+function addCart(sel){// ADICIONA OU ACRESCENTA E ATUALIZA CARRINHO DE COMPRAS
     cont = 0;
     window.document.querySelector(".cartList").innerHTML="";
     if(sel===1){
@@ -165,11 +199,16 @@ function addCart(sel){
         }
     }
     memory=0
+    memoryB=0
     for(c in carrinhoLoja){
-        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">${carrinhoLoja[c].qnt}</div><div class="cartECless" onclick="changeCart(${c},1)">-</div><img class="cartECjunk" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
-        memory+=(Number.parseFloat(carrinhoLoja[c].valorAtual)*carrinhoLoja[c].qnt)
+        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual.toFixed(2).replace('.',',')}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">${carrinhoLoja[c].qnt}</div><div class="cartECless" onclick="changeCart(${c},1)">-</div><img class="cartECjunk" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
+        memory+=(carrinhoLoja[c].valorAtual*carrinhoLoja[c].qnt)
+        memoryB+=(carrinhoLoja[c].qnt)
     }
-    window.document.querySelector(".cartResume").innerHTML=`Total: ${unitMonetaria+memory} + FRETE`
+    window.document.querySelector(".cartResume").innerHTML=`<strong class="smallpricetext">Você possui ${memoryB} item(ns) em seu carrinho.</strong><br><br><br><strong>Total:</strong> <strong class="totalcartPrice">${unitMonetaria+memory.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 3
+      })}</strong> <strong>+ FRETE</strong>`;
 }
 
 function changeCart(selected, action){
@@ -191,6 +230,6 @@ function changeCart(selected, action){
             break;
     }
     if(carrinhoLoja.length<1){
-        window.document.querySelector(".cartList").innerHTML="Você ainda não tem nenhum item em seu carrinho"
+        window.document.querySelector(".cartList").innerHTML=`<div class="cartListnone">Você ainda não tem nenhum item em seu carrinho</div><img src="images/icons/saderror.png" alt="nonecart">`
     }
 }
