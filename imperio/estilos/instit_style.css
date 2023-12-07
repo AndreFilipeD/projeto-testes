@@ -45,15 +45,14 @@ html{/*OVERFLOW Y NONE WHEN START*/
 body{/*BETTER WAY TO START WIDTH AND HEIGHT BODY*/
 	width: 100%;
 	min-height: 100vh;}
-header{
+header{ /* HEADER */
 	display: flex;
 	justify-content: center;
-   	height: 100px;
-   	background-color: var(--mainbackcolor);
-   	width: 100%;
+	height: 90px;
+	background-color: var(--mainbackcolor);
+	width: 100%;
 }
 #rightHeader{
-	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -68,13 +67,13 @@ header{
 	transition: 1s;
 }
 #rightHeader img:hover{
-	background-color: #FFCAB8;
+	background-color: var(--secbackcolor);
+	padding: 23px;
 	filter: none;
 	transition: .4s;
 	cursor: pointer;
 }
 #leftHeader{
-	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
@@ -89,7 +88,7 @@ header{
 	transition: 1s;
 }
 #leftHeader img:hover{
-	background-color: #FFCAB8;
+	background-color: var(--secbackcolor);
 	padding: 25px;
 	filter: none;
 	transition: .4s;
@@ -115,8 +114,8 @@ header{
 	height: 80px;
 	margin-left: -70px;
 	margin-top: -5px;
-	transition: 1s;
 	border-radius: 50px;
+	transition: 1s;
 }
 #mainTitle{
 	font-family: var(--titlefont);
@@ -125,17 +124,12 @@ header{
 	margin-top: 48px;
 	margin-bottom: 50px;
 	margin-left: -20px;
-	background-color: #FFCAB8;
-	/*border: 1.5px dotted black;*/
-	/*border: 3px double black;*/
-	/*border: 4px double #883636;*/
-	border: 8px double #883636;
-	/*border: 2px dotted black;*/
-	/*border: 2px dotted #883636;*/
-	/*border: 2px dotted #883636;*/
-	/*border: 4px outset #883636;*/
+
+	border: 8px double var(--mainbackcolor);
 	border-radius: 0px 30px 0px 30px;
-	color: #883636;
+
+	background-color: var(--secbackcolor);
+	color: var(--mainbackcolor);
 
 	padding-left: 5px;
 	padding-right: 5px;
@@ -148,19 +142,17 @@ header{
 	font-weight: 500;
 	margin-top: 45px;
 	margin-left: -125px;
-
-	text-shadow: 0px 1px 1px #883636;
-	/*color: var(--secbackcolor);*/
+	text-shadow: 0px 1px 1px var(--mainbackcolor);
 }
 main{
 	flex: 1;
-	/*height: 100vh;*/
 	height: 1000px;
 	width: 100%;
 	background-color: rgb(255, 255, 255);
- }
-
+}
 #shopContainer{
+	padding: 0px 20px;
+	margin: auto;
 	height: fit-content;
 }
 .descArticle{
