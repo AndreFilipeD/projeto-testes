@@ -6,9 +6,29 @@ var cont = 0; memory = 0; memoryB = 0;
 var antigoval = 0;
 var atualval = 0;
 var mostruarioIndice = -1;
+var txtsend = ''
+var telnumber = 19997597681
 var carrinhoLoja = []
 var produtosLoja = [
     //---------------------------------------------
+    {nome:'Blusa de exemplo',
+    indice:0,qnt:0,alt:'Camiseta',
+    img:'produtos/oficial/conjunto_calca.png',
+    info:'Blusa branca padrão feita de algodão',
+    peso:'198g',cor:'azul',tamanho:'M',material:'algodão',
+    valorAntigo:0,
+    valorAtual:39.99,
+    categoria:['Calça']}
+    ,//---------------------------------------------
+    {nome:'Blusa de exemplo',
+    indice:0,qnt:0,alt:'Camiseta',
+    img:'produtos/oficial/conjunto_calca2.png',
+    info:'Blusa branca padrão feita de algodão',
+    peso:'198g',cor:'azul',tamanho:'M',material:'algodão',
+    valorAntigo:0,
+    valorAtual:39.99,
+    categoria:['Calça']}
+    ,//---------------------------------------------
     {nome:'Blusa de exemplo',
     indice:0,qnt:0,alt:'Camiseta',
     img:'produtos/roupas_Teste/blusa_exemplo.png',
@@ -199,14 +219,34 @@ function addCart(sel){// ADICIONA OU ACRESCENTA E ATUALIZA CARRINHO DE COMPRAS
     memory=0
     memoryB=0
     for(c in carrinhoLoja){
-        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual.toFixed(2).replace('.',',')}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus nselm" onclick="changeCart(${c},2)">+</div><div class="cartQntValue">${carrinhoLoja[c].qnt}</div><div class="cartECless nselm" onclick="changeCart(${c},1)">-</div><img class="cartECjunk nselm" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
+        window.document.querySelector(".cartList").innerHTML+=`<div class="cartElement"><img class="cartElementImg" src="${carrinhoLoja[c].img}" alt="${carrinhoLoja[c].alt}"><div class="cartElementName">${carrinhoLoja[c].nome}<br><br><strong>R$ ${carrinhoLoja[c].valorAtual.toFixed(2).replace('.',',')}</strong></div><div class="cartElementInfo"><strong>tamanho: </strong>${carrinhoLoja[c].tamanho}<br><strong>cor: </strong>${carrinhoLoja[c].cor}</div><div class="cartElementConfig"><div class="cartECplus nselm" onclick="changeCart(${c},2)">+</div><div class="cartQntValue nselm">${carrinhoLoja[c].qnt}</div><div class="cartECless nselm" onclick="changeCart(${c},1)">-</div><img class="cartECjunk nselm" onclick="changeCart(${c},0)" src="images/icons/delete.png" alt="${carrinhoLoja[c].alt}"></div></div>`
         memory+=(carrinhoLoja[c].valorAtual*carrinhoLoja[c].qnt)
         memoryB+=(carrinhoLoja[c].qnt)
     }
-    window.document.querySelector(".cartResume").innerHTML=`<strong class="smallpricetext">Você possui ${memoryB} item(ns) em seu carrinho.</strong><br><br><br><strong>Total:</strong> <strong class="totalcartPrice">${unitMonetaria+memory.toLocaleString('pt-BR', {
+    window.document.querySelector(".cartResume").innerHTML=`<strong class="smallpricetext">Você possui <strong>${memoryB}</strong> item(ns) em seu carrinho.</strong><br><br><hr><br><strong>Total:</strong> <strong class="totalcartPrice">${unitMonetaria+memory.toLocaleString('pt-BR', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 3
       })}</strong> <strong>+ FRETE</strong>`;
+
+      txtsend = encodeURIComponent(`🦒Olá, Império Francisca!
+Acabei de montar meu carrinho! 💖
+`)
+
+      for(c in carrinhoLoja){
+        txtsend+= encodeURIComponent(`
+• ${carrinhoLoja[c].nome} - ${carrinhoLoja[c].qnt} un x ${unitMonetaria+carrinhoLoja[c].valorAtual.toFixed(2).replace('.',',')}`)
+      }
+      txtsend+=encodeURIComponent(`
+____________________________________________________
+Total:
+${unitMonetaria+memory.toLocaleString('pt-BR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 3
+})} + FRETE
+      
+Fico no aguardo de seu atendimento.`)
+
+      window.document.querySelector('.cartSendButton').setAttribute("href","https://api.whatsapp.com/send/?phone="+telnumber+"&text="+txtsend)
 }
 
 function changeCart(selected, action){// CONTROLA QUANTIDADE POR PRODUTO E NOTIFICA SITUAÇÃO
