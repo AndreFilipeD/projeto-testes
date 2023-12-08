@@ -14,7 +14,7 @@ var produtosLoja = [
     {nome:'Blusa de exemplo',
     indice:0,qnt:0,alt:'Camiseta',
     img_a:'produtos/oficial/conjunto_calca.png',
-    img_b:'produtos/oficial/conjunto_calca.png',
+    img_b:'produtos/oficial/conjunto_calca.webp',
     img_c:'produtos/oficial/conjunto_calca.png',
     info:'Blusa branca padrão feita de algodão',
     peso:'198g',cor:'azul',tamanho:'M',material:'algodão',
