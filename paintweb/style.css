@@ -27,6 +27,10 @@ canvas{
     border: 1px solid #d3d3d3;
     box-shadow: 3px 3px 3px #0000002f;
 }
+canvas:hover{
+    border: 1px solid lightseagreen;
+    /*cursor: none;*/
+}
 footer{
     border: 1px solid #aaaaaa;
     background-color: #d8d8d8;
