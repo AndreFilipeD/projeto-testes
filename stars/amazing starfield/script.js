@@ -8,7 +8,7 @@ var grownFrame = 0.005 //(0.1) pouco | (1) muito
 //O quando a estrela cresce por frame
 var frameUpdateTime = 16 //(16) Rapido | (200) Lentidão
 //Delay de atualização de quadros
-var maxStars = 1000
+var maxStars = 3000
 var alt = window.innerHeight //Captura de Altura inicial da tela
 var larg = window.innerWidth //Captura de Largura inicial da tela
 var canvas = window.document.getElementById("starfield")//Coletando Canvas
@@ -53,7 +53,7 @@ function refreshField(){//Atualização das estrelas
                 stars[i].y+=stars[i].my*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)*(stars[i].s)
                 ctx.beginPath();//Grafico das estrelas
                 ctx.arc(stars[i].x, stars[i].y, stars[i].s, 0, 2 * Math.PI);
-                ctx.fillStyle = "white";
+                ctx.fillStyle = "#3333FF";
                 ctx.fill();
            }
             
