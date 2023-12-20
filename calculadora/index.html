@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagens/icon.png" type="image/x-icon">
+</head>
+<body>
+    <main>
+        <div class="calcScreen">0</div>
+        <div class="calcNumbers">
+            <div class="button bt1" onclick="numberClicked(1)">1</div>
+            <div class="button bt2" onclick="numberClicked(2)">2</div>
+            <div class="button bt3" onclick="numberClicked(3)">3</div>
+            <div class="button bt4" onclick="numberClicked(4)">4</div>
+            <div class="button bt5" onclick="numberClicked(5)">5</div>
+            <div class="button bt6" onclick="numberClicked(6)">6</div>
+            <div class="button bt7" onclick="numberClicked(7)">7</div>
+            <div class="button bt8" onclick="numberClicked(8)">8</div>
+            <div class="button bt9" onclick="numberClicked(9)">9</div>
+            <div class="button btC" onclick="restartC()"style="color: #e04d4d">C</div>
+            <div class="button bt0" onclick="numberClicked(0)">0</div>
+            <div class="button btB" onclick="showResult()">=</div>
+        </div>
+        <div class="calcOperators">
+            <div class="button btAdd" onclick="operatorButton('add')">+</div>
+            <div class="button btSub" onclick="operatorButton('sub')">-</div>
+            <div class="button btMulti" onclick="operatorButton('mul')">*</div>
+            <div class="button btDivis" onclick="operatorButton('div')">/</div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

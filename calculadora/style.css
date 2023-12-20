@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /*non selectable elements*/
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+body{
+    height: 100vh;
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    width: 300px;
+    height: 400px;
+    background-color: #4a424e;
+    box-shadow: 5px 5px 15px #00000065;
+    border-radius: 45px;
+    padding: 15px;
+    display: grid;
+    grid-template-areas: "screen screen" "numbers operators";
+}
+.calcScreen{
+    width: 100%;
+    height: 60px;
+    background-color: #adc9bf;
+    box-shadow: -5px -5px 15px #FFFFFF65 inset;
+    border-radius: 40px;
+    grid-area: screen;
+    font-family: 'Silkscreen', sans-serif;
+    color: #00000095;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 5px;
+    font-size: 3.10em;
+    overflow: hidden;
+}
+.calcNumbers{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 60%;
+    gap: 7px;
+    margin-top: 20px;
+    grid-area: numbers;
+}
+.calcOperators{
+    margin-top: 20px;
+    margin-left: 15px;
+    grid-area: operators;
+    display: grid;
+    gap: 5px;
+}
+.bt0{
+    grid-column: 2;
+    grid-row: 4;
+}
+.button{
+    width: 60px;
+    height: 60px;
+    background-color: #4a424e;
+    outline: 2px solid white;
+    border-radius: 40px;
+    box-shadow: 5px 5px 15px #00000065;
+    transition: .8s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    font-weight: bolder;
+    color: white;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #6e6274;
+    transition: .4s;
+}
