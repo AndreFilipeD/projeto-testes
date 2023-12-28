@@ -5,18 +5,22 @@ window.document.querySelector("#update").addEventListener('click',()=>{
 })
 
 function updateContent(){
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://jsonplaceholder.typicode.com/po2sts')
     .then((response)=>{
             return response.json()
-        }
-    ).then((data)=>{
+        })
+    .then((data)=>{
         cont = 0
         window.document.querySelector("#space").innerHTML=""
         for(c in data){
             window.document.querySelector("#space").innerHTML+=`<div class="element">Titulo: ${data[c].title}|ID:${data[c].id}|USERID:${data[c].userId}|BODY:${data[c].body}</div>`
             cont++
         }window.document.querySelector("#update").innerHTML=`Encontrado ${cont} Arquivos.`
-
-        console.log(data[0])
+    })
+    .catch(()=>{
+        window.alert('Algo de errado não esta certo')
+    })
+    .finally(()=>{
+        window.alert('Fim do processo.')
     })
 }
