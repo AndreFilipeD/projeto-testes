@@ -1,15 +1,13 @@
-export const Square = () => {
-    return(
-        <div className="w-50 h-50 bg-orange-700 text-white">
-            Quadradin
-        </div>
-    )
-}
+import {Square} from './Square'
+import {Circle} from './Circle'
 
-export const Circle = () => {
+export const Geo = () => {
     return(
-        <div className="w-50 h-50 bg-orange-700 text-white rounded-full">
-            Circulin
+        <div>
+            <h1>Formas Geométricas</h1>
+            <Square />
+            <br/>
+            <Circle />
         </div>
     )
 }

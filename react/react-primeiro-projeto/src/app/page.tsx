@@ -1,13 +1,11 @@
-import { Square , Circle} from '@/components/Geo';
+import { Geo } from '@/components/Geo';
 
 const Page = () => {
   return(
     <div>
       <h1>Olá, Mundo!</h1>
-      <h3>Finalmente consegui fazer algo com REACT</h3>
-      <Square />
-      <br />
-      <Circle />
+      <h3>Estou utilizando REACT</h3>
+      <Geo />
     </div>
   );
 }
