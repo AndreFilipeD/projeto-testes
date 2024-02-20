@@ -1,5 +1,4 @@
-
-
+import { HeartScore } from "@/components/nota";
 
 export default function Home() {
 
@@ -21,11 +20,8 @@ export default function Home() {
         
         <p>
         <hr></hr>
-        NOTA
-        <hr></hr>
-
+        NOTA easy
         </p>
-
         <p>
         {total}
         {total>=1?'🧡':'🖤'}
@@ -34,7 +30,14 @@ export default function Home() {
         {total>=4?'🧡':'🖤'}
         {total>=5?'🧡':'🖤'}
         </p>
-      
+
+        <p>
+        <hr></hr>
+        NOTA medium
+        </p>
+
+        <HeartScore heart = {4.8}/>
+
       </div>
     </div>
     </>
