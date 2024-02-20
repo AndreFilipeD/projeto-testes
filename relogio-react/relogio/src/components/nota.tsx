@@ -1,8 +1,13 @@
 type Props = {
-    heart: number
+    heart: number;
+    hheart: number;
 }
 
-export const HeartScore = ({heart}: Props) =>{
+type emoji = {
+
+}
+
+export const HeartScore = ({heart}:Props) =>{
 
     if(heart>5){heart = 5};
     if(heart<0){heart = 0};
@@ -17,4 +22,22 @@ export const HeartScore = ({heart}: Props) =>{
             </p>
         </>
     )
+}
+
+export const HardHeartScore = ({hheart}:Props) => {
+
+    if(hheart > 5){hheart = 5}
+    if(hheart < 0){hheart = 0}
+
+const solidHeart: number = Math.floor(hheart)
+
+const emoji: string[] = ['😠','😟','😐','🙂','😁']
+
+    return (
+        <>
+        <p>{hheart}{hheart >= 1 ? emoji[solidHeart-1].repeat(solidHeart):''}{'😶'.repeat(5-solidHeart)}</p>
+        
+        </>
+    )
+    
 }

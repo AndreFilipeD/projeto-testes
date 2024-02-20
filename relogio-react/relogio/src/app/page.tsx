@@ -1,11 +1,11 @@
-import { HeartScore } from "@/components/nota";
+import { HeartScore, HardHeartScore } from "@/components/nota";
 
 export default function Home() {
 
   const dataAtual = new Date();
   const hora = dataAtual.getHours()
   const min = dataAtual.getMinutes()
-  var total: number = 3.5
+  var total: number = 3.7
 
   return (
     <>
@@ -36,7 +36,14 @@ export default function Home() {
         NOTA medium
         </p>
 
-        <HeartScore heart = {4.8}/>
+        <HeartScore heart = {2.8}/>
+
+        <p>
+        <hr></hr>
+        NOTA hard
+        </p>
+
+        <HardHeartScore hheart = {4}/>
 
       </div>
     </div>
