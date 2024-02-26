@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    height: 500px;
+    font-size: 1.5em;
+}
+
+.one{
+    font-size: 1.1em;
+    font-weight: bold;
+}
